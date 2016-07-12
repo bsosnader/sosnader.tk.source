@@ -1,0 +1,41 @@
+---
+layout: homepage
+---
+
+<div class="home">
+
+  <div class="grid">
+    <div class="col-3-12"><div class="circular"></div></div>
+    <div class="col-9-12">
+      <p>{{ site.description }}</p>
+      <p>Below you'll find projects I've worked on, either websites or things I've built for others, or stuff I've worked on in my own time. You'll also find some blog posts about what I've been up to.</p>
+    </div>
+  </div>
+  <h1><a href="/projects/">Projects</a></h1>
+  <div class="grid">
+    <div class="col-1-2">
+      <h4 class="center"><a href="http://sosnaderagency.com" target="_blank">The Sosnader Agency, Inc.</a></h4>
+      <a href="/projects/agency/"><img src="/img/agency1-th.png" alt="project thumbnail" /></a>
+    </div>
+    <div class="col-1-2">
+      <h4 class="center">John Shapiro Superheroes</h4>
+      <a href="/projects/shapiro/"><img src="/img/shapiro3-th.png" alt="project thumbnail" /></a>
+    </div>
+  </div>
+  <h1><a href="/posts/">Posts</a></h1>
+
+  <ul class="post-list">
+    {% for post in site.posts limit:5 %}
+    <li>
+      <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+
+      <h2>
+        <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+      </h2>
+      {{ post.excerpt }}
+    </li>
+    {% endfor %}
+  </ul>
+
+
+</div>
