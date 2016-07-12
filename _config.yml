@@ -18,3 +18,5 @@ github_username:  bsosnader
 # Build settings
 markdown: kramdown
 excerpt_separator: <!--more-->
+sass:
+  style: compressed
