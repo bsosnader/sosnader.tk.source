@@ -1,8 +1,6 @@
 ---
 layout: post
 title:  "Installing GalliumOS on a Toshiba Chromebook 2 (2015)"
-date:   2016-07-11 08:54:15 -0400
-categories: hardware
 ---
 Ever since Apple declined to release new Retina Macbook Pros at WWDC 2016, I've been on the hunt for a laptop to tide me over until the eventual release sometime in the fall. While I don't exactly *need* a new laptop just yet (after all, the lab computers at Penn State would be perfectly serviceable for the first few months of my first semester) I decided I would prefer to have something portable to take to class. I wasn't planning on breaking the bank, so I settled on a Chromebook, and after researching a bit (with the help of [Reddit](http://reddit.com/r/chromeos)) I settled on a [Toshiba Chromebook 2](https://www.amazon.com/Toshiba-Chromebook-CB35-C3300-Backlit-Keyboard/dp/B015806LMM), the 2015 edition with the backlit keyboard and 1920x1080 IPS screen. I was able to find a great deal on a refurbished one for $230.
 <!--more-->
