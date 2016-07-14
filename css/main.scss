@@ -74,3 +74,13 @@ img + em {
 	justify-content:center;
 	align-items:center;
 }
+::-moz-selection {
+  background: rgba(207, 207, 207, 1);
+    // color: #cfcfcf;
+  text-shadow: none;
+}
+::selection {
+  background: rgba(207, 207, 207, 1);
+    // color: #cfcfcf;
+  text-shadow: none;
+}
