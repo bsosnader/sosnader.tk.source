@@ -1,6 +1,6 @@
 ---
 layout: post
-title: My First Passion Post
+title: My First Post
 categories: [eng, passion]
 ---
-Hi there, this is my first passion post. Enjoy! TBD.
+Hi there, this is my first post. More TBD.
