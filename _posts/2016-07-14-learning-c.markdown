@@ -1,5 +1,6 @@
 ---
 layout: post
+category: technology
 title:  "My Quest to Learn C"
 ---
 As a new programmer, I'm always trying to absorb as much information as possible and learn as many tools as possible. After reading through the [daunting list](http://matt.might.net/articles/what-cs-majors-should-know/) of "What every computer science major should know" by Matt Might, I came to the realization that I have a *lot* of work ahead of me. 
