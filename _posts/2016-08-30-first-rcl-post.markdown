@@ -1,10 +1,10 @@
 ---
 layout: post
-title: Kairos in Rhetoric
+title: Rhetoric Wins Wars
 category: rcl
 ---
 
-In rhetoric, *kairos*, the Greek concept of the "opportune moment," plays an important role in defining what makes a rhetorical or civic moment "great." On thinking of a speech or situation in which kairos was important, my first thought was Dwight D. Eisenhower's famous speech to his troops on June 6 , 1944—D-Day.  Eisenhower, the then Supreme Allied Commander in Europe, delivers a brief, 243 word  speech to the men about to storm the beaches. The content of the speech is passionate, first starting by stating the cause the soldiers are fighting for. He says the men are bringing about the, "destruction of the German war machine, the elimination of Nazi tyranny over oppressed peoples of Europe, and security for ourselves in a free world." His words here and later in the speech are examples of *pathos,*  appealing to the emotions of the soldiers to get them riled up for fighting the Germans. 
+In rhetoric, *kairos*, the Greek concept of the "opportune moment," plays an important role in defining what makes a rhetorical or civic moment "great." One such example of an incredibly great civic and rhetorical moment was Dwight D. Eisenhower's famous speech to his troops on June 6 , 1944—D-Day.  Eisenhower, the then Supreme Allied Commander in Europe, delivers a brief, 243 word  speech to the men about to storm the beaches. The content of the speech is passionate, first starting by stating the cause the soldiers are fighting for. He says the men are bringing about the, "destruction of the German war machine, the elimination of Nazi tyranny over oppressed peoples of Europe, and security for ourselves in a free world." His words here and later in the speech are examples of *pathos,*  appealing to the emotions of the soldiers to get them riled up for fighting the Germans. 
 
 ![D-Day Invasion]({{ site:baseurl }}/img/posts/dday_landing.jpg)
 *the invasion of Normandy, June 6, 1944*
