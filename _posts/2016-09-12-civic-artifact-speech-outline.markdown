@@ -3,27 +3,30 @@ layout: post
 category: rcl
 title: "Civic Artifact Speech Outline"
 ---
-* Intro Paragraph
-	- War evokes strong nationalistic emotions
-	- At height of WWII, ideals and commonplaces of western world being threatened
-	- June 6, 1944 was day of essential Allied attack
-	- would either be a turning point or represent failure of Allied counterattack
-	- Dwight D Eisenhower delivered speech to Allied forces to motivate them
+* Introduction
+	- Indroduce D-Day, talk about the odds that the Allied soldiers faced
+	- Talk about how important the invasion was, how everything hung in the balance
+	- Soldiers would have been nervous
+	- Need to somehow motivate them and excite them with one short speech
+	- Introduce Eisenhower and his speech
+	- He needs to find the perfect words
+	
+	Thesis:
 	- Eisenhower uses commonplace, pathos, and kairos to construct an energizing speech for his troops to march to victory
-* 1st body paragraph
+* 1st point
 	- The speech uses commonplaces about freedom and democracy
 	- Contrasts the Germans and the Allies
 	- Not just American commonplaces, more universal 
 	- [will analyze quotes from speech here]
 	- Commonplaces remind soldiers what they’re fighting for
 	- Commonplaces that soldiers relate to effectively prepare them to fight with passion
-* 2nd body paragraph
+* 2nd point
 	- Eisenhower uses pathos for motivation
 	- Discusses “tyranny” of Nazis and their atrocities
 	- Supposed to evoke anger against germans and pity for victims
 	- Helps elevate drive to push forward and succeed
 	- Appeal to emotion is needed to ensure soldiers are passionate about their fight
-* 3rd body paragraph
+* 3rd point
 	- Strongest motivating force in speech is kairos
 	- Uses recent allied victories to show that Germany is no longer dominating
 	- If the speech was earlier in the war, things would look much more bleak and would be harder to motivate
