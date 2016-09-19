@@ -5,7 +5,7 @@ title: "A Heartbreaking Work of Staggering Genius"
 ---
 ![cover]({{ site:baseurl }}/img/posts/eggers.jpg)
 
-Everyone needs to read this book. I can't say it any other way. Read it. It's a visceral gut punch of a novel, a splash of cold water to the face that fills you with emotions—sadness, anger, joy—but often also with laughter. It's unlike almost any other book I've read and it's one of the few books that practically forced me to read it in one sitting (it's over 400 pages—not an easy task). I don't even know where to begin. The book overwhelmed me, tore me apart, and made me think differently about what literature can do. I don't really know why it affected me so much. Maybe it was because of what was happening in my life when I read it. Or maybe it's just that damn good. 
+This is my favorite book. If you're looking for something to read, read this. You won't regret it. It's a visceral gut punch of a novel, a splash of cold water to the face that fills you with emotions—sadness, anger, joy—but often also with laughter. It's unlike almost any other book I've read and it's one of the few books that practically forced me to read it in one sitting (it's over 400 pages—not an easy task). I don't even know where to begin. The book overwhelmed me, tore me apart, and made me think differently about what literature can do. I don't really know why it affected me so much. Maybe it was because of what was happening in my life when I read it. Or maybe it's just that damn good. 
 
 &nbsp;
 
