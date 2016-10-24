@@ -1,0 +1,15 @@
+---
+layout: post
+category: circle
+title: "The Circle's Paradigm Shift"
+---
+
+In this section of *The Circle,* we get to see the paradigm shift that the book has been hinting at start hitting in full swing. Politicians are pressured into going transparent, more and more people are becoming connected, and there is an increasing pressure on Mae and others to respond, interact, and share. It's the culmination of what Eggers fears will happen to our own society, and it's a drastic change that affects everyone's lives and makes the world different--the definition of a paradigm shift.
+
+What we see is that sharing, whether willing or unwilling, becomes the new mantra of living. If one isn't sharing, then one isn't truly living, this new society seems to say. That's different from how The Circle operated before, and it's certainly different from our own society. Before this shift, although sharing was heavily pressured, it was not at the level it is after Mae's transparency. Politicans are heavily pressured into going transparent, Mae's parents are told they must uncover their cameras, and Mae is attacked by people who get offended when she doesn't instantly get back to them and share and connect with them. 
+
+We can see very obviously the negative repurcussions of this shift. Because Eggers is argueing against this way of life, he heavily emphasizes and exhibits them. For instance, Mae's parents getting caught "in the act" is one such negative side effect. As we all have discussed before, some things are just meant to be private. Later, Mae is overwhelmed by all the people insisting to have her attention, and breaks down on the inside. Humans, although social creatures, are not built to handle the amount of interaction displayed in this section. 
+
+I should amend my previous statement now, come to think of it. The paradigm shift is almost there, but it's not complete. I think the true paradigm shift will come when The Circle is "closed." It's not directly said what that means, but it's clear it's some sort of major change or completion. This completion will be the true paradigm shift. It will be when everyone is sharing everything, all connected, all interacting, with no secrets. It sounds like it could be alluring, in a way. I mean, if we are all connected to one another, truly and fully, we could form some sort of utopian society where there is no hate, crime, or fear, because everyone understands everyone else. Yet, we see very clearly that it could never work. For one, there are too many people like Mercer, who would reject the system. Second, as I explained before, humans are not built for that and could not withstand the constant pressure. Finally, also as I've argued before, some things are meant to be private and should stay that way.
+
+Do I think this paradigm shift could ever occur in our society? No. I think Eggers goes too far and is too drastic with his shift. It's not really believable or realistic. It's one of the major flaws of *The Circle*--it's just too obvious and over the top in the point that it's making. Nevertheless, the shift is clearly present in this section, and is nearing completion.
