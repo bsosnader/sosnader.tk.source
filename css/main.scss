@@ -52,7 +52,10 @@ $on-laptop:        800px;
         "syntax-highlighting",
         "grid"
 ;
-
+html {
+	height:100%;
+	width:100%;	
+}
 h4 {
 	padding-top: 10px;
 }

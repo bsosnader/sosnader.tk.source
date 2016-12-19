@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Brenden Sosnader</title>
+    <description>Hi, I&#39;m Brenden Sosnader. I study computer science at Penn State University and I like to make things. This is where I show them off.
+</description>
+    <link>http://sosnader.tk/</link>
+    <atom:link href="http://sosnader.tk/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Sun, 18 Dec 2016 19:59:27 -0500</pubDate>
+    <lastBuildDate>Sun, 18 Dec 2016 19:59:27 -0500</lastBuildDate>
+    <generator>Jekyll v3.1.6</generator>
+    
+      <item>
+        <title>Making a Webapp with AngularJS</title>
+        <description>&lt;p&gt;It hadn’t yet been a day since I’d been home for winter break, and I already had grown bored of just sitting around. Sure, we all dream of the promised land after the semester is over, where there are no responsibilities and no homework, and where finals are nothing but a faint memory in our heads, but in reality, it gets old, fast.&lt;/p&gt;
+
+&lt;p&gt;Speaking of finals, though, there’s a peculiar phenonenom the seems to occur during the last week or so of the semester—college students, instead of studying, will inevitably spend all of their free time calculating the lowest possible grade they can get on their finals to still get the grade they want in their classes. I’m not immune to it myself—it’s fun, and quite frankly relieving, to discover you only need a 65% on your CS final to get an A in the course. And if you look online, you’ll find there’s plenty of websites that do the calculations for you. I decided to make one too.
+&lt;!--more--&gt;&lt;/p&gt;
+
+&lt;p&gt;I wanted to cure my boredom and learn at the same time, so I decided to make it using something I haven’t really had experience with before: &lt;a href=&quot;https://angular.io&quot;&gt;AngularJS&lt;/a&gt;. Although this idea has been done plenty of times before, I thought it would be a nice way to experiment with AngularJS. You can find the finished project &lt;a href=&quot;http://sosnader.tk/grade-calc&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;I faced a few challenges in getting this project up and running, but all in all it only took me the better part of a Sunday afternoon. The biggest challenge that I had to overcome was to actually figure out how AngularJS worked. I had really never touched any sort of Javascript framework before this point and I didn’t really understand the concept. After going through some tutorials and example code on the AngularJS website, I felt ready enough to tackle the project.&lt;/p&gt;
+
+&lt;p&gt;The Angular team makes it really easy to get a project up and running with the &lt;a href=&quot;https://cli.angular.io/&quot;&gt;angular-cli&lt;/a&gt; tool. After running their setup, all I had to do was configure a few components, set up my form and calculations, and apply some styles. It’s pretty barebones, but it got me to learn the basics of what AngularJS is all about, and I’m excited to be be able to use its tools in future projects.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://sosnader.tk/grade-calc&quot;&gt;&lt;img src=&quot;/img/posts/grade.png&quot; alt=&quot;grade app screenshot&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Sun, 18 Dec 2016 00:00:00 -0500</pubDate>
+        <link>http://sosnader.tk/technology/2016/12/18/making-a-webapp-with-angularjs.html</link>
+        <guid isPermaLink="true">http://sosnader.tk/technology/2016/12/18/making-a-webapp-with-angularjs.html</guid>
+        
+        
+        <category>technology</category>
+        
+      </item>
+    
+      <item>
+        <title>The Devil is in the Detail</title>
+        <description>&lt;p&gt;To be honest, before we started working on this project, I thought that the hardest part would definitely be filming things, or maybe writing out the script to form a coherent narrative. Yet, our group finished those parts really quickly, and pretty easily. We divided our work up, got it done, reviewed each others, then recorded the narration and filmed a few scenes with a camera from the media center. All in all, a solid one day of work.&lt;/p&gt;
+
+&lt;p&gt;The real trouble is coming from all the editing. First, we had some camera audio issues we didn’t know about that had to be fixed in post-production. Now, at least for me, iMovie is a bit of a pain to use. It glitches with my audio clips, cutting off pieces that I actually wanted, and randomly resizing the lengths when I add pictures or videos to a different track, for seemingly no reason. It doesn’t let me place clips where I want, instead forcing me to adhere to its random placement. The controls for several features are not nearly as granular as I would like them to be (looking at you, Ken Burns effect), and the UI seems unintuitive and hamstrung. I will admit, it’s definitely better than attempting to use something truly professional, like Adobe Premiere, but I didn’t forsee how much time the editing would take, partly because I have to figure out how everything works, and partly because just getting everything together and perfectly lined up takes lots of time. Still, though, it seems to be working out pretty well, and I’m excited to see what our final product looks like.&lt;/p&gt;
+
+&lt;p&gt;One issue we still might run into and have to deal with is the length of our docmentary. We have a lot of info for each section, and we might run over the 10 minutes with everything we want to say. If that’s the case, we’ll have to decide what we can cut from it. Other than that, we’re doing pretty well.&lt;/p&gt;
+</description>
+        <pubDate>Sun, 04 Dec 2016 00:00:00 -0500</pubDate>
+        <link>http://sosnader.tk/rcl/2016/12/04/devil-in-the-detail.html</link>
+        <guid isPermaLink="true">http://sosnader.tk/rcl/2016/12/04/devil-in-the-detail.html</guid>
+        
+        
+        <category>rcl</category>
+        
+      </item>
+    
+      <item>
+        <title>The Stranger</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/img/posts/stranger.jpg&quot; alt=&quot;the stranger cover&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;The Stranger&lt;/em&gt; is one of those classic novels, written in 1942 by Albert Camus. I read it senior year for English class. It’s widely considered an existentialist novel, although apparently (a quick Wikipedia search tells me) Camus rejected that label (instead calling it absurdist). Regardless, it’s really interesting, and shows what one can do with a novel beyond the typical storytelling.&lt;/p&gt;
+
+&lt;p&gt;The novel follows the life of a French Algerian, Mersault, as he goes about his daily life. Mersault, however, is no ordinary character. The book starts with Mersault receiving word of his mother’s death, yet, Mersault hardly seems to care. This theme of uncaringness seems to follow through the entire book. Mersault only cares about the physical realities of the world around him, thinking nothing of the people, or emotions he should feel as events happen to him.&lt;/p&gt;
+
+&lt;p&gt;Camus uses this book as a vehicle for displaying his philosophy of the absurd, and he does it quite effectively. In essence, Camus is contrasting the struggle of humanity attempting to find meaning in life, yet failing to find it. Mersualt is attacked by many people throughout the book for his seemingly uncaring attitude. People simply cannot understand how he does not see the same meaning in life as they do. In this way, Mersault is an existentialist.&lt;/p&gt;
+
+&lt;p&gt;At first glance, this book may seem like another one of those stuffy books that English teachers tout around yet turn out to be awful to read (I’m looking at you, &lt;em&gt;Scarlet Letter&lt;/em&gt;). But for some reason, this one stuck with me. The writing is beautiful to read. The novel takes an interesting angle, with one of the most unique main characters of any book I’ve read. And, like any good book should, it makes you think. It makes you ask questions. And that makes it worth it to read.&lt;/p&gt;
+</description>
+        <pubDate>Thu, 01 Dec 2016 00:00:00 -0500</pubDate>
+        <link>http://sosnader.tk/passion/2016/12/01/the-stranger.html</link>
+        <guid isPermaLink="true">http://sosnader.tk/passion/2016/12/01/the-stranger.html</guid>
+        
+        
+        <category>passion</category>
+        
+      </item>
+    
+      <item>
+        <title>The New Neediness</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/img/posts/loveme.gif&quot; alt=&quot;love me gif&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;One aspect of the &lt;em&gt;The Circle&lt;/em&gt; that I think Dave Eggers utilized really well to critique modern society was his depiction of the “neediness” that people seem to have developed, the desire for attention that overwhelms Mae at points, and disgusts Mercer. It’s the relentless begging for likes, shares, pings, and responses that seems ridiculous, but has solid basis in reality. We see it many times throughout the book. Mae is pestered by people when she becomes famous to respond to all of their notes, to look at their websites, to help their children with this or that by giving them attention. Francis’s strange desires, like asking Mae to rate his “performance” also reflect this neediness. It’s mostly seen through the social and online aspect of the book. As Mercer says:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Now the movie stars beg people to follow their Zing feeds. They send pleading messages asking everyone to smile at them. And holy fuck, the mailing lists! Everyone’s a junk mailer. You know how I spend an hour every day? Thinking of ways to unsubscribe to mailing lists without hurting anyone’s feelings.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;This attitude is already becoming pervasive online. People will follow hundreds of others in the hopes of getting follow backs, they offer “like for like,” comment to get ratings and messages from their friends on Facebook, send snapchats out to everyone and get offended when people open and don’t respond to them.&lt;/p&gt;
+
+&lt;p&gt;It wasn’t always like this, obviously. What changed? To me, it seems pretty simple. In the past, we didn’t expect people to respond and interact so much and so rapidly because we simply couldn’t. When you sent a letter you had to wait a while for a response, and even if you didn’t get one, it was possible that your letter was just lost. After the invention of the telephone, communication became easier, but if someone didn’t pick up the phone you simply had to assume they were busy. However, once smartphones and the Internet were invented, it became much harder for people to “excuse away” others behavior. You no longer could assume that someone just “didn’t see the text” because you can go and look at their social media accounts and see that they’re using their phone and just ignoring you. And although we rationally know there are many reasons why someone wouldn’t get back to you instantly (and if you think about it, you’ve done it many times yourself, often by accident), we find it hard to reconcile that idea in our head.&lt;/p&gt;
+
+&lt;p&gt;Yet, as always, Eggers goes too far. Yes, in today’s society, we all get a little miffed if we don’t get a response, or a like, or if we see an opened snapchat. But we get over it, because we know that in the end, it’s not a big deal. Even with the hypersociality of The Circle, it’s unrealistic that people would become &lt;em&gt;that&lt;/em&gt; needy, &lt;em&gt;that&lt;/em&gt; whiny, and &lt;em&gt;that&lt;/em&gt; intense. The causes are the same, but the effects in real life are nowhere near the effects in the book.&lt;/p&gt;
+</description>
+        <pubDate>Fri, 25 Nov 2016 00:00:00 -0500</pubDate>
+        <link>http://sosnader.tk/circle/2016/11/25/the-new-neediness.html</link>
+        <guid isPermaLink="true">http://sosnader.tk/circle/2016/11/25/the-new-neediness.html</guid>
+        
+        
+        <category>circle</category>
+        
+      </item>
+    
+      <item>
+        <title>The Circle</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/img/posts/circlecover.jpg&quot; alt=&quot;circle cover&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Now that we’ve all finished &lt;em&gt;The Circle&lt;/em&gt;, it’s time to offer my thoughts on it. I also kind of want to address the ending, which probably shocked most of us.&lt;/p&gt;
+
+&lt;p&gt;There’s really no point in me describing anything about the plot of the book or its themes, as we all have explored them exhaustivly in our blogs. So I’ll just talk about my opinion.&lt;/p&gt;
+
+&lt;p&gt;I &lt;em&gt;sort of&lt;/em&gt; liked it. I thought it had a lot of good ideas, and some actual valid critiques of our social media-driven culture. I think we all can agree that, sometimes, some poeple use social media too much, and place too much of their self-worth on how their online image is perceived. There are also very valid concerns about privacy, and what governments and companies are doing with what you share online. There are very real possibilities of abuse and of people getting harmed or supressed due to this type of surveillance and data collecting.&lt;/p&gt;
+
+&lt;p&gt;However, Eggers just takes it too far. He could have made his message much more insididious, and the infiltration of The Circle into the society much more subtle and clever. Instead, he just repeatedly smashes his message into your face, and makes his society extra dumb and unrealistic and automatically accepting of everything that The Circle produces. It wouldn’t work like that in the real world. We already have so many activist groups trying to spread awareness and to protect the rights of people online. I firmly believe that if a situation like The Circle were to play out, it would have to be done a lot more cleverly than the book describes.&lt;/p&gt;
+
+&lt;p&gt;Finally, the ending, while surprising, is one of the more realistic parts of the book. We’ve seen the entire time how easily brainwashed Mae is. She’s not a very likeable character. She doens’t have any of the characteristics of your typical novel hero. So of course she’s not gonna save the world. She’s trash.&lt;/p&gt;
+
+&lt;p&gt;I really don’t like Mae.&lt;/p&gt;
+</description>
+        <pubDate>Fri, 25 Nov 2016 00:00:00 -0500</pubDate>
+        <link>http://sosnader.tk/passion/2016/11/25/the-circle.html</link>
+        <guid isPermaLink="true">http://sosnader.tk/passion/2016/11/25/the-circle.html</guid>
+        
+        
+        <category>passion</category>
+        
+      </item>
+    
+      <item>
+        <title>A Song of Ice and Fire</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/img/posts/ice.jpg&quot; alt=&quot;map of westeros&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Although George R.R. Martin’s &lt;em&gt;A Song of Ice and Fire&lt;/em&gt; is technically a series, not a single book, I can’t talk about one book without talking about them all. And believe me, every single one of these books is incredible.&lt;/p&gt;
+
+&lt;p&gt;I’m sure all of you have heard of (or watched) HBO’s adaptation of this series. If you’ve watched the show, then you know how amazing the story is. If not, then you probably have a general idea of what it’s like– dragons, swordfights, and more. But the books (and the show) are so much more than that. George manages to weave so many intricate plots together without giving away any clear idea of what will happen in the end. Also, he has no qualms about killing off important characters, so there’s none of that “plot armor” that so many main characters seem to have. Everyone is in danger, everyone has plans, and there’s no clear idea of who will emerge on top.&lt;/p&gt;
+
+&lt;p&gt;Furthermore, George creates a complex, realistic world (well, realistic enough for fantasy) which its characters populate and exist with their own different cultures and traditions. One of the most important parts of any good fantasy novel is the world it’s in, and George’s world is interesting, engaging, and plain cool.&lt;/p&gt;
+
+&lt;p&gt;The books are all behemoths, requriring a lot of invested time to read. They draw you in, though, and keep you engaged. Even the lenghtly descriptions of feasts were somehow still enjoyable to read. However, if you haven’t read or watched anything yet, fair warning– George might die before finishing the last two (or maybe even three) books. Then it’d be up to the show to finish it off. However, the show and the book have differences, and have branched off a little bit. So we may never know exactly how George plans to end it. Still, it’s more than worth it.&lt;/p&gt;
+</description>
+        <pubDate>Wed, 16 Nov 2016 00:00:00 -0500</pubDate>
+        <link>http://sosnader.tk/passion/2016/11/16/a-song-of-ice-and-fire.html</link>
+        <guid isPermaLink="true">http://sosnader.tk/passion/2016/11/16/a-song-of-ice-and-fire.html</guid>
+        
+        
+        <category>passion</category>
+        
+      </item>
+    
+      <item>
+        <title>The Hitchhiker&#39;s Guide to the Galaxy</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/img/posts/dont-panic.jpg&quot; alt=&quot;don&#39;t panic&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;For the past few weeks, I’ve been doing books that I think speak to everyone–books that I think everyone would enjoy reading and that apply to all of our lives. And although I enjoy reading those sorts of books, I’d be lying if I said they’re the majority of books I read. In reality, I mostly read fantasy and sci-fi. And although you may not enjoy these books as well, I feel like it’d be wrong if I didn’t give them fair representation. So in the coming weeks I’ll probably be doing more of those.&lt;/p&gt;
+
+&lt;p&gt;With that being said, &lt;em&gt;The Hitchhiker’s Guide to the Galaxy&lt;/em&gt; is a true classic, and something anyone can enjoy–as long as they like dry British humor. Written by Douglas Adams, this book is packed full of clever wit and exotic characters. It follows the life of the most boring and mundane British person ever, Arthur Dent, as he finds himself suddenly teleported out into space right before the destruction of Earth by his friend Ford Prefect, who’s actually an alien.&lt;/p&gt;
+
+&lt;p&gt;Don’t worry, though, it gets a lot weirder. You’ll be introduced to the perils of Vogon poetry, a man with two heads and a depressed android, and the importance of always having your towel. It’s definitely not for everyone, but the humor is out of this world (see what I did there), including clever phrases such as this one, describing teleportation:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;“It’s unpleasantly like being drunk.”&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;“What’s so unpleasant about being drunk?”&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;“You ask a glass of water.”&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;The whole book is like this, and it’s a wild ride that I never find myself tired of reading. If you’re into this genre, and somehow haven’t read it yet, I highly recommend checking it out. There’s four other books after it, all just as funny, and even a sixth written after he died by another author.&lt;/p&gt;
+</description>
+        <pubDate>Tue, 25 Oct 2016 00:00:00 -0400</pubDate>
+        <link>http://sosnader.tk/passion/2016/10/25/the-hitchhikers-guide-to-the-galaxy.html</link>
+        <guid isPermaLink="true">http://sosnader.tk/passion/2016/10/25/the-hitchhikers-guide-to-the-galaxy.html</guid>
+        
+        
+        <category>passion</category>
+        
+      </item>
+    
+      <item>
+        <title>The Circle&#39;s Paradigm Shift</title>
+        <description>&lt;p&gt;In this section of &lt;em&gt;The Circle,&lt;/em&gt; we get to see the paradigm shift that the book has been hinting at start hitting in full swing. Politicians are pressured into going transparent, more and more people are becoming connected, and there is an increasing pressure on Mae and others to respond, interact, and share. It’s the culmination of what Eggers fears will happen to our own society, and it’s a drastic change that affects everyone’s lives and makes the world different–the definition of a paradigm shift.&lt;/p&gt;
+
+&lt;p&gt;What we see is that sharing, whether willing or unwilling, becomes the new mantra of living. If one isn’t sharing, then one isn’t truly living, this new society seems to say. That’s different from how The Circle operated before, and it’s certainly different from our own society. Before this shift, although sharing was heavily pressured, it was not at the level it is after Mae’s transparency. Politicans are heavily pressured into going transparent, Mae’s parents are told they must uncover their cameras, and Mae is attacked by people who get offended when she doesn’t instantly get back to them and share and connect with them.&lt;/p&gt;
+
+&lt;p&gt;We can see very obviously the negative repurcussions of this shift. Because Eggers is argueing against this way of life, he heavily emphasizes and exhibits them. For instance, Mae’s parents getting caught “in the act” is one such negative side effect. As we all have discussed before, some things are just meant to be private. Later, Mae is overwhelmed by all the people insisting to have her attention, and breaks down on the inside. Humans, although social creatures, are not built to handle the amount of interaction displayed in this section.&lt;/p&gt;
+
+&lt;p&gt;I should amend my previous statement now, come to think of it. The paradigm shift is almost there, but it’s not complete. I think the true paradigm shift will come when The Circle is “closed.” It’s not directly said what that means, but it’s clear it’s some sort of major change or completion. This completion will be the true paradigm shift. It will be when everyone is sharing everything, all connected, all interacting, with no secrets. It sounds like it could be alluring, in a way. I mean, if we are all connected to one another, truly and fully, we could form some sort of utopian society where there is no hate, crime, or fear, because everyone understands everyone else. Yet, we see very clearly that it could never work. For one, there are too many people like Mercer, who would reject the system. Second, as I explained before, humans are not built for that and could not withstand the constant pressure. Finally, also as I’ve argued before, some things are meant to be private and should stay that way.&lt;/p&gt;
+
+&lt;p&gt;Do I think this paradigm shift could ever occur in our society? No. I think Eggers goes too far and is too drastic with his shift. It’s not really believable or realistic. It’s one of the major flaws of &lt;em&gt;The Circle&lt;/em&gt;–it’s just too obvious and over the top in the point that it’s making. Nevertheless, the shift is clearly present in this section, and is nearing completion.&lt;/p&gt;
+</description>
+        <pubDate>Sun, 23 Oct 2016 00:00:00 -0400</pubDate>
+        <link>http://sosnader.tk/circle/2016/10/23/circle-paradigm-shift.html</link>
+        <guid isPermaLink="true">http://sosnader.tk/circle/2016/10/23/circle-paradigm-shift.html</guid>
+        
+        
+        <category>circle</category>
+        
+      </item>
+    
+      <item>
+        <title>The Perks of Being a Wallflower</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/img/posts/wallflower.jpg&quot; alt=&quot;&amp;quot;cover&amp;quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I’m sure you guys have heard of &lt;em&gt;The Perks of Being a Wallflower&lt;/em&gt;, either from the popular movie or from the book it was based off of. I remember seeing trailers for the movie but never really looking into it, thinking it wasn’t my kind of movie. I had no idea it was originally a book until a friend of mine insisted that I read it. Apparently I was “four years too late” (the book’s about a freshman in high school) but I figured I could still enjoy it. He told me “if you can, read it in one sitting.” So I did. I read it over the weekend, without any expectations or understanding of what it was about going in.&lt;/p&gt;
+
+&lt;p&gt;It was not what I was expecting at all, but it was amazing. If you don’t know, the story follows a boy, Charlie, as he enters high school and completes his freshman year. Charlie is not okay. He has faced many unfortunate circumstances, is a bit socially awkward, and can’t really seem to figure out his place in the world. Charlie’s freshman year is full of twists and turns, and ups and downs, and through it all, we always see Charlie being as genuine and kind as always. He’s incredibly selfless, but has trouble taking care of himself. The book is intense, touching on very rough topics. It’s very interesting to see the way these topics are viewed through the lense of a teenage boy.&lt;/p&gt;
+
+&lt;p&gt;There’s so much packed into the book for its length, and to be honest, it made me tear up multiple times. There are some passages that sort of bite right into your core, unveiling things you maybe didn’t really want to think about before. If you get the chance, read it, and read it in one sitting. It’s worth it.&lt;/p&gt;
+</description>
+        <pubDate>Mon, 17 Oct 2016 00:00:00 -0400</pubDate>
+        <link>http://sosnader.tk/passion/2016/10/17/perks-of-being-a-wallflower.html</link>
+        <guid isPermaLink="true">http://sosnader.tk/passion/2016/10/17/perks-of-being-a-wallflower.html</guid>
+        
+        
+        <category>passion</category>
+        
+      </item>
+    
+      <item>
+        <title>Paradigm Shift</title>
+        <description>&lt;p&gt;The paradigm shift that I think I would most likely choose for this assignment actually comes from another class I’m taking– Astro 5. In astronomy, there was a drastic paradigm shift around the time of Galileo and Keplar from a geocentric model of the universe to a heliocentric model. Basically, the world changed from believing that the universe rotated around the Earth to believing that the Earth rotated around the Sun. This change actually had drastic effects not only for the scientific community but also philosophically and religiously. There was tons of controversy about this change and it affected many things in many different sciences and teachings. I think it would be a really interesting topic to delve deep into, because today, we all know how the Solar System works, but back then, the “heavens” were thought of far differently than we think of them now. So I’m not really gonna put up another choice unless you guys really think this is a bad one, because I’m pretty set on this idea.&lt;/p&gt;
+
+&lt;p&gt;Keywords: astronomy, heliocentrism, geocentrism, solar system, Copernicus&lt;/p&gt;
+
+&lt;p&gt;My favorite TED talk is one by Glenn Greenwald entitled &lt;a href=&quot;https://www.ted.com/talks/glenn_greenwald_why_privacy_matters&quot;&gt;Why Privacy Matters&lt;/a&gt;. It’s a discussion of why, in this digital age, our privacy still should matter to us. I actually used quotes from it when I was writing my Schreyer admission essay on the topic, and I think it’s especially pertinent to us given our reading of &lt;em&gt;The Circle.&lt;/em&gt; It’s definitely interesting to watch.&lt;/p&gt;
+</description>
+        <pubDate>Thu, 13 Oct 2016 00:00:00 -0400</pubDate>
+        <link>http://sosnader.tk/rcl/2016/10/13/paradigm-shift.html</link>
+        <guid isPermaLink="true">http://sosnader.tk/rcl/2016/10/13/paradigm-shift.html</guid>
+        
+        
+        <category>rcl</category>
+        
+      </item>
+    
+  </channel>
+</rss>
