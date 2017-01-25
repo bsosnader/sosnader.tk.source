@@ -1,6 +1,6 @@
 ---
 layout: post
-cateogry: civic-issues
+category: civic-issues
 title: "Gerrymandering"
 ---
 
