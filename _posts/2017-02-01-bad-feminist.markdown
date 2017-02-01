@@ -3,7 +3,7 @@ layout: post
 category: passion
 title: "Bad Feminist"
 ---
-[bad feminist cover]({{ site:baseurl }}/img/posts/fem.jpg)
+![bad feminist cover]({{ site:baseurl }}/img/posts/fem.jpg)
 
 Okay, since you all hate Dave Eggers so much, I figured I'd review a book that I'm currently reading and enjoying that I actually think you'd all like. It's called *Bad Feminist*, and it's by Roxane Gay. 
 
