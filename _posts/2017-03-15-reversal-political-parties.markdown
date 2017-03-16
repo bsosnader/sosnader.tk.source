@@ -18,19 +18,19 @@ George Washington, our first president, wasn't actually in any political party, 
 
 So anyway, that didn't last long.
 
-##Federalist Party
+## Federalist Party
 
 Technically, the Federalist Party could be considered the party of Washington. Its ideas were centered around the concept of federalism, i.e. a strong central government. 
 
-##Anti-Federalist Party
+## Anti-Federalist Party
 
 Self explanatory, basically. These guys sprung up right around 1800 and focused more on the common people and their right for representation. They were renamed the Republican Party, and then the Democratic-Republican Party. In the 1810s, the Federalist Party fell apart. The Democratic Republican Party split into different factions. Around the time of Andrew Jackson's presidency, they were renamed simply the Democratic Party. 
 
-##Whig Party
+## Whig Party
 
 A different faction of the Democratic Republican Party formed the Whig Party.  The Whig Party is important in the formation of the Republican Party because the Republican Party continued many of the ideas of the Whig Party, mainly, big government involvement.
 
-##Democratic and Republican Parties
+## Democratic and Republican Parties
 
 So, the timeline where we can begin discussing these two parties and how they changed starts right around the Civil War. The Republican Party at the time, was the "party of Lincoln," and as such, promoted forward-thinking ideas like freedom of slavery, voting rights for black men, and big government. The Democratic Party at the time was more traditional--it wasn't new and fresh like the Republican Party, and it focused more on things like state's rights. 
 
