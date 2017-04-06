@@ -3,7 +3,6 @@ layout: post
 category: civic-issues
 title: "Filibusters"
 ---
-
 If you've been reading the news recently, you'd know that the Democrats in the Senate have been planning on "filibustering" the nomination of Neil Gorsuch to the Supreme Court. And, if you were paying attention a few months ago, you'd know that the Republicans did the same to Obama's nomination of Merrick Garland. But what exactly is a filibuster, and what's its history? 
 
 You may have a vision in your head of a lone Congressman passionately standing on the floor, speaking for as long as he humanly can to delay or stop the passage of an unjust bill. In fact, Senator Jeff Merkley, (D - Oregon) just acted out that exact scene last night, [speaking for 15 hours](https://www.nytimes.com/2017/04/05/us/politics/senator-jeff-merkley-protest-gorsuch-nomination.html) against Gorsuch's nomination. But that wasn't even a filibuster. So what is?
@@ -22,6 +21,10 @@ Filibusters have become more and more common as partisanship has increased in Wa
 ![cloture](https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/US_Senate_cloture_since_1917.png/800px-US_Senate_cloture_since_1917.png)
 
 The nuclear option has been used before, by Democrats, but only for lower-court judgeship nominations. Filibusters are still viable for Supreme Court nominations and passing legislation. However, even that might change, as Republicans have said they will use the nuclear option on Gorsuch's nomination if Democrats refuse to stop their filibuster. 
+
+**THE REPUBLICANS JUST DEPLOYED THE NUCLEAR OPTION FOR GORSUCH**
+
+[link](https://www.nytimes.com/2017/04/06/us/politics/neil-gorsuch-supreme-court-senate.html)
 
 Overall, the filibuster went from being impossible, to being rarely used, to becoming an almost common part of Senate practice. I believe this change is due to the increasing lack of compromise in Congress. I've touched on this increasing divide in some of my older posts, and I think it's important to recognize. Republicans and Democrats are, more and more often, simply refusing to cooperate with each other. The increasing use (and possible removal) of the filibuster is just another sign of that. As I've sad before as well, something needs to change. 
 
