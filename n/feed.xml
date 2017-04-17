@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Brenden Sosnader</title>
+    <description>Hi, I&#39;m Brenden Sosnader. I study computer science at Penn State University and I like to make things. This is where I show them off.
+</description>
+    <link>http://sosnader.tk/</link>
+    <atom:link href="http://sosnader.tk/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Sun, 16 Apr 2017 23:24:47 -0400</pubDate>
+    <lastBuildDate>Sun, 16 Apr 2017 23:24:47 -0400</lastBuildDate>
+    <generator>Jekyll v3.1.6</generator>
+    
+      <item>
+        <title>Visualizing Penn State&#39;s Daily Gym Attendance</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/img/posts/gym.jpg&quot; alt=&quot;white building &quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;If you’re a Penn State student who likes to exercise, you know that the three on-campus gyms can get &lt;em&gt;really&lt;/em&gt; crowded. It sometimes seems like you have to get there immediately at opening time if you want to get a peaceful, uninterrupted workout in. It’s to be expected–although three gyms is a lot, 46,000 students is even more. The University recognizes that this can be a problem, and takes a count of students entering and exiting each gym, uploading it to a &lt;a href=&quot;https://studentaffairs.psu.edu/CurrentFitnessAttendance/&quot;&gt;really neat webapp&lt;/a&gt; where you can see how crowded each gym is. But that doesn’t really help you plan–you can only see what’s happening in the moment. Sure, eventually if you check it enough you get used to knowing when the crowds come and go, but it’d be a lot more useful (and interesting) to see attendance charted over time. So when my friend Ally suggested the idea to me, I decided to do just that. 
+&lt;!--more--&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;breaking-it-down&quot;&gt;Breaking it down&lt;/h1&gt;
+
+&lt;p&gt;I expected this to be a fairly large project, so I had to separate it into manageable chunks. I decided to work on actually obtaining the data first, and left the front-end visualization for later. I knew I’d need to store it in some kind of database as well, but I had to figure out how to actually &lt;em&gt;get&lt;/em&gt; the data I wanted.&lt;/p&gt;
+
+&lt;h1 id=&quot;the-scraper&quot;&gt;The Scraper&lt;/h1&gt;
+
+&lt;p&gt;The first thing I tried was looking in the source code for any clues as to how the page was getting its data. I quickly found the &lt;a href=&quot;https://studentaffairs.psu.edu/CurrentFitnessAttendance/api/CounterAPI&quot;&gt;API link&lt;/a&gt;, but, unfortunately, it wouldn’t let me access it. Next, I tried to use the python module &lt;a href=&quot;https://www.crummy.com/software/BeautifulSoup/&quot;&gt;beautifulsoup&lt;/a&gt; to scrape and parse the html. That didn’t work either, for an obvious reason–the page was rendered using javascript, and beautifulsoup alone can’t get the javascript-rendered html–it can only get the basic html which didn’t have the values I wanted.&lt;/p&gt;
+
+&lt;p&gt;Instead, I had to set up a headless browser using selenium and phantomJS in my python browser. What the headless browser does is basically go to the webpage and pretend to be a regular browser, like Chrome, so that the page will render its javascript. Then you can pass the rendered html over to beautifulsoup and commence the parsing. The code is super simple, too:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&#39;http://example.com&#39;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;driver&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;webdriver&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;PhantomJS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;driver&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;soup&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;BeautifulSoup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;driver&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;page_source&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;html.parser&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;Then you can use the soup object to extract whatever data you need, and you’re set! You just need to make sure you have phantomJS installed.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo apt-get install phantomjs
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;Also make sure to include the proper imports at the top of the python file:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;selenium&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;webdriver&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;bs4&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;BeautifulSoup&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;You’ll probably want regex as well:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;re&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;So now that I had a reliable way of scraping data from the website, I needed to figure out how to store it.&lt;/p&gt;
+
+&lt;h1 id=&quot;the-database&quot;&gt;The Database&lt;/h1&gt;
+
+&lt;p&gt;The selection of a databse for this project was actually something that took me a bit of time to consider. I couldn’t really use a regular relational database because it didn’t make much sense. It’s not like I’m storing lists of users, where each row is a distinct user with distinct fields. I really only have three distinct ‘things’–the three gyms. Each gym has attendance values and a timestamp associated with that value. For that kind of setup, a time series database should be used. Time series databases are built for this exact scenario and make it easy to organize the data.&lt;/p&gt;
+
+&lt;p&gt;I chose to use &lt;a href=&quot;https://www.influxdata.com/&quot;&gt;InfluxDB&lt;/a&gt; because it was free, had good documentation, and seemed to have all the features I was looking for without being unnecessarily complex or bloated. It has extensive libraries for many languages, and it was really easy to link to python. All I had to do was convert my html from earlier to a JSON format dict and use it in the following code:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;host&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&#39;localhost&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;port&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;8086&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;user&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&#39;user&#39;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;password&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&#39;password&#39;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;dbname&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&#39;name&#39;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;json_body&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;format_url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# this is my function from the scraper class&lt;/span&gt;
+
+    &lt;span class=&quot;n&quot;&gt;client&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;InfluxDBClient&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;host&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;port&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;user&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dbname&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+    &lt;span class=&quot;n&quot;&gt;client&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;create_database&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dbname&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+    &lt;span class=&quot;n&quot;&gt;client&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;create_retention_policy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&#39;policy_name&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&#39;7d&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+    &lt;span class=&quot;n&quot;&gt;client&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;write_points&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;json_body&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;parse_args&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;parser&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;argparse&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ArgumentParser&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;description&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&#39;example code to play with InfluxDB&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;parser&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;add_argument&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&#39;--host&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;required&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;False&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&#39;localhost&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                        &lt;span class=&quot;n&quot;&gt;help&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&#39;hostname of InfluxDB http API&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;parser&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;add_argument&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&#39;--port&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;required&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;False&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;8086&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                        &lt;span class=&quot;n&quot;&gt;help&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&#39;port of InfluxDB http API&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;parser&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;parse_args&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;__name__&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&#39;__main__&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;parse_args&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;host&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;host&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;port&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;port&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;I got all of that working on my laptop, and now had a python script I could run to consistently add data to the database. The next step was getting data in regular intervals. I needed to set up a server.&lt;/p&gt;
+
+&lt;h1 id=&quot;the-server&quot;&gt;The Server&lt;/h1&gt;
+
+&lt;p&gt;As a cheap college student, I never want to spend money if I don’t absolutely have to. For instance, this website is hosted by &lt;a href=&quot;https://pages.github.com/&quot;&gt;github pages&lt;/a&gt; entirely for free, as is my &lt;a href=&quot;http://sosnader.tk/grade-calc/&quot;&gt;Grade Calculator&lt;/a&gt; project. But, github pages is just a simple static host for frontend content. I needed a real machine to run my database on.&lt;/p&gt;
+
+&lt;p&gt;Before making the jump to buying a VPS though, I first pulled out my dusty old Raspberry Pi Model A. After a &lt;em&gt;lot&lt;/em&gt; of tweaking and fiddling, I got the database set up on a headless installation of raspbian. There’s not too much to talk about here. After installing InfluxDB, Python 3, and all their respective dependencies, I added a simple cron job add data every ten minutes.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;/10 &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; bash -l -c &lt;span class=&quot;s1&quot;&gt;&#39;/home/brenden/psu-fitness/database.py&#39;&lt;/span&gt; &amp;gt;&amp;gt; /home/brenden/logs/cron.log 2&amp;gt;&amp;amp;1
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Once I verified that my setup was working correctly, I grabbed a server from &lt;a href=&quot;https://www.vultr.com/&quot;&gt;Vultr&lt;/a&gt; and replicated my setup. Originally, I planned on only hosting the database in the VPS, and putting the front end on github pages. However, I figured since I already had the server I might as well use it as the web server as well. I’ve never configured my own web server from scratch before anyway, so I viewed it as a new challenge.&lt;/p&gt;
+
+&lt;p&gt;Configuration was actually super easy. I installed nginx and set up a configuration file. The config file had two key parts. The first part told the server where to look to find the html files to serve to port 80. THe second part told the server where to look if someone queried the database, which, for InfluxDB, takes the form of:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;http://servername:8086/query?your-query-here
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;I didn’t want to have that silly 8086 there so I set up a reverse proxy to point any requests to&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;http://servername/query
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;to port 8086 and to the database. InfluxDB has some basic authentication built in, and I’m not too worried about anyone hacking into my database. They wouldn’t find anything anyway, and I took enough basic steps I feel to stop any bot or casual hacker from doing something they shouldn’t.&lt;/p&gt;
+
+&lt;p&gt;Speaking of security, I also decided to add SSL support to the site. I was expecting this to be a huge hassle, but luckily &lt;a href=&quot;https://letsencrypt.org&quot;&gt;Let’s Encrypt&lt;/a&gt; offers a super painless way to set up SSL support on a web server. I just had to change my nginx configuration file a little bit and run the tool that Let’s Encrypt supplies and I was good to go.&lt;/p&gt;
+
+&lt;h1 id=&quot;the-front-end&quot;&gt;The Front End&lt;/h1&gt;
+
+&lt;p&gt;The final part of this challenge was the front end. I wanted to go barebones this time–I didn’t think I needed any sort of Angular framework or the like. I just wanted a simple page to display the graph and some info and nothing else. &lt;a href=&quot;http://chartjs.org&quot;&gt;ChartJS&lt;/a&gt; is a great, simple JavaScript charting library that I was easily able to adapt to my purposes. After whipping a few styles together along with the &lt;a href=&quot;http://getskeleton.com&quot;&gt;Skeleton CSS Framework&lt;/a&gt; (a new favorite of mine), the site was finally ready to deploy! You can view it at &lt;a href=&quot;https://fitnessdb.tk&quot;&gt;https://fitnessdb.tk&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h1 id=&quot;what-i-learned&quot;&gt;What I Learned&lt;/h1&gt;
+
+&lt;p&gt;This project took a few weeks of my time, but the efforts were more than worth it. Not only did I create something that’s sorta cool, I also learned a ton about a bunch of different technologies in the process. I got a &lt;em&gt;lot&lt;/em&gt; more comfortable with databases than I have been in the past. I really had never used or configured a database up until this point, and this project was a great way to learn in a hands on approach.&lt;/p&gt;
+
+&lt;p&gt;I also got better with using external Python and JavaScript libraries. Documentation can often be sparse and unreadable, and I definitely learned how to adapt and twist things to do what I wanted them to do.&lt;/p&gt;
+
+&lt;p&gt;Funnily enough, I think what I learned the &lt;em&gt;most&lt;/em&gt; about through this project was the linux shell. I had to use it extensively to configure the servers, run commands, and test things. I got far more comfortable with it than I had been before, and I think those skills will really help my productivity in the future.&lt;/p&gt;
+
+&lt;p&gt;Anyway, that’s all! I’m pretty sure no one will ever read this other than me, so that’s kind of sad. But hey, it’s good to write out my steps and process to help me remember how I did it and to document it for the future.&lt;/p&gt;
+
+&lt;p&gt;Until next time!&lt;/p&gt;
+
+</description>
+        <pubDate>Thu, 13 Apr 2017 00:00:00 -0400</pubDate>
+        <link>http://sosnader.tk/technology/2017/04/13/visualizing-penn-states-gym-attendance.html</link>
+        <guid isPermaLink="true">http://sosnader.tk/technology/2017/04/13/visualizing-penn-states-gym-attendance.html</guid>
+        
+        
+        <category>technology</category>
+        
+      </item>
+    
+      <item>
+        <title>The Martian</title>
+        <description>&lt;p&gt;&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/en/c/c3/The_Martian_2014.jpg&quot; alt=&quot;the martian&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This isn’t fantasy, and it’s not a romance novel, but what it &lt;em&gt;is…&lt;/em&gt; is &lt;strong&gt;very&lt;/strong&gt; good. &lt;em&gt;The Martian&lt;/em&gt; by Andy Weir is a book (big shocker there). If you only heard about or saw the movie, well, this is the book it was based off of. The movie, by the way, is pretty awesome and cool, but the book is also awesome, and more detailed than the movie was.&lt;/p&gt;
+
+&lt;p&gt;If you live under a rock and didn’t hear about the movie, then I’ll just tell you what the book is about. Basically, it’s 2035 and humans have sent a team of scientists to Mars, where they live on this little settlement. When it’s time to leave, there’s a huge dust storm and one of them gets left behind. He then has to figure out a way to survive for a &lt;em&gt;very&lt;/em&gt; long period of time on Mars without anyone to assist him.&lt;/p&gt;
+
+&lt;p&gt;The book is thrilling and intense, and Weir does a good job of the very terrifying thought of being stranded on a different planet. The story is told through journal-like entries from the main character, along with action scenes from Earth. It’s a really fun read, because the main character is so lighthearted and snarky about his situation. Another cool thing is that the science of the book (and the film) is relatively realistic. There are some glaring errors and things that are ignored, but for the most part, nothing in the book (or movie) will make you say, “No, that isn’t possible.” Especially because it’s in the future, so, you can explain away a few things with that.&lt;/p&gt;
+
+&lt;p&gt;If you’ve already seen the movie or read the book, and want to read more about the science, &lt;a href=&quot;http://gizmodo.com/science-of-the-martian-the-good-the-bad-and-the-fasc-1734726471&quot;&gt;click this&lt;/a&gt;. If you haven’t read the book, read it. Or watch the movie. Or don’t do anything. It’s your life.&lt;/p&gt;
+</description>
+        <pubDate>Thu, 13 Apr 2017 00:00:00 -0400</pubDate>
+        <link>http://sosnader.tk/passion/2017/04/13/the-martian.html</link>
+        <guid isPermaLink="true">http://sosnader.tk/passion/2017/04/13/the-martian.html</guid>
+        
+        
+        <category>passion</category>
+        
+      </item>
+    
+      <item>
+        <title>Kitchen Confidential</title>
+        <description>&lt;p&gt;&lt;img src=&quot;https://images-na.ssl-images-amazon.com/images/I/51RqxoGhJML._SX319_BO1,204,203,200_.jpg&quot; alt=&quot;cover&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;For the record, I want to say that I &lt;em&gt;almost&lt;/em&gt; did another fantasy book this week, but at the last moment decided on this book instead.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Kitchen Confidential&lt;/em&gt; is written by the famouse chef (among other things) Anthony Bourdain. Anthony Bourdain is, to put it simply, really cool. Not only has he been a chef for years and capable of creating amazing food, he also has a really cool TV Show &lt;em&gt;Parts Unknown,&lt;/em&gt; where he travels the world and tries food from all cultures, all while teaching the audience about life and history in that particular area.&lt;/p&gt;
+
+&lt;p&gt;But anyway, the book. It’s basically what got him famous. It’s a tale of his life in the kitchen, and it exposes the underbelly of commercial kitchens that you may not have known about. It’s a really cool look into an industry that is really far more complex and interesting than you might think. It’s also a very witty book. There are some darker parts, as Bourdain has not always had an easy life. But above everything else, it’s just incredibly engaging. If you read it, you’ll learn why you should never go out to brunch, why you should never order fish on a Monday, and how the mafia got involved with his restuarant (they supplied his meat).&lt;/p&gt;
+
+&lt;p&gt;Overall, this book kinda shows how messed up the cooking industry is. He talks about long hours, ignored injuries, and the necessity of a mascochistic personality. Becoming a professional cook is not for the faint of heart, and he makes that clear. But what comes out most in the pages is his sheer passion for the craft. You can tell how much he loves food and making food.&lt;/p&gt;
+
+&lt;p&gt;It’s a really fun read, and it’s not even fantasy this time!&lt;/p&gt;
+</description>
+        <pubDate>Wed, 05 Apr 2017 00:00:00 -0400</pubDate>
+        <link>http://sosnader.tk/passion/2017/04/05/kitchen-confidential.html</link>
+        <guid isPermaLink="true">http://sosnader.tk/passion/2017/04/05/kitchen-confidential.html</guid>
+        
+        
+        <category>passion</category>
+        
+      </item>
+    
+      <item>
+        <title>Filibusters</title>
+        <description>&lt;p&gt;If you’ve been reading the news recently, you’d know that the Democrats in the Senate have been planning on “filibustering” the nomination of Neil Gorsuch to the Supreme Court. And, if you were paying attention a few months ago, you’d know that the Republicans did the same to Obama’s nomination of Merrick Garland. But what exactly is a filibuster, and what’s its history?&lt;/p&gt;
+
+&lt;p&gt;You may have a vision in your head of a lone Congressman passionately standing on the floor, speaking for as long as he humanly can to delay or stop the passage of an unjust bill. In fact, Senator Jeff Merkley, (D - Oregon) just acted out that exact scene last night, &lt;a href=&quot;https://www.nytimes.com/2017/04/05/us/politics/senator-jeff-merkley-protest-gorsuch-nomination.html&quot;&gt;speaking for 15 hours&lt;/a&gt; against Gorsuch’s nomination. But that wasn’t even a filibuster. So what is?&lt;/p&gt;
+
+&lt;p&gt;The history of the word “filibuster” comes from the word “flee-booters” or “freebooters.” Freebooters referred to pirates which would raid Spanish colonies in the Caribbean in the 17th century. Later, in the 1850s, the word morphed into “filibusters,” and was used to refer to Americans who incited revolutions in Central America. It was only until 1890 that the term was actually used to refer to what we see it as today. However, the concept of filibustering existed in Congress long before that.&lt;/p&gt;
+
+&lt;p&gt;When the U.S. Senate was first created, it adopted rules which allowed for senators to end debate on a discussion and move right to a vote. These rules meant that a filibuster would be impossible–senators could simply move to move to a vote. But the rule wasn’t used very often, and in 1806, it was removed. The first time the concept of a filibuster was brought up happened in 1837, although it wasn’t called a filibuster. The Senate was debating on the passage of a bill to create the Second Bank of America, and Henry Clay wanted the debate to end immediately. Senator William King threated to delay the debate indefinitely, and Clay acquiesed. He didn’t actually have to filibuster, but the door had been opened.&lt;/p&gt;
+
+&lt;p&gt;Filibusters still were used sparsely, however, the Senate enacted the rule of “cloture” in 1917, which was a rule that debate could be ended by a two thirds vote by Senators. This was later changed to three fifths, then back to two thirds. Filibusters began to pick up steam during the 1950s and 60s, when they were used by Southern Senators to delay passage of civil rights legislature. It’s kind of funny that we see filibusters today as perhaps noble and valiant efforts, when the first times they were used in earnest were to prohibit civil rights.&lt;/p&gt;
+
+&lt;p&gt;Up until this point, all filibusters had been “talking filibusters.” Basically, senators would actually have to stand on the floor and talk for as long as the filibuster went. The record was over 24 hours, and while a filibuster was occurring, nothing else could be done or discussed. The rules were changed so that a topic or bill could be “virtually filibustered,” while the Senate moved on to other things. This way, the Senate did not get gridlocked, but filibusters could still remain a thing.&lt;/p&gt;
+
+&lt;p&gt;Up until this point, filibusters could only be overturned by a two thirds majority vote for cloture. In practice, this made it difficult to stop a filibuster if one party was against it and one party was for it. However, in 2005, a new option was formed when Democrats filibustered some of George Bush’s judicial nominees. Although cloture required a two thirds majority, there was a parlimentary rule which allowed any senator to challege any rule on the basis of constitutionality. The vote on whether or not to remove the rule would be decided by a simple majority. In this manner, it would be possible to challenge the cloture rule, declare it unconstitutional, and remove it, all with only a simple majority of votes. It was called the “nuclear option.”&lt;/p&gt;
+
+&lt;p&gt;Filibusters have become more and more common as partisanship has increased in Washington. As we can see, the amount of motions for cloture has increased substantially, and although not all cloture motions are for filibusters, it is clear that filibustering has a lot of its gravitas.
+&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/US_Senate_cloture_since_1917.png/800px-US_Senate_cloture_since_1917.png&quot; alt=&quot;cloture&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The nuclear option has been used before, by Democrats, but only for lower-court judgeship nominations. Filibusters are still viable for Supreme Court nominations and passing legislation. However, even that might change, as Republicans have said they will use the nuclear option on Gorsuch’s nomination if Democrats refuse to stop their filibuster.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;THE REPUBLICANS JUST DEPLOYED THE NUCLEAR OPTION FOR GORSUCH&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.nytimes.com/2017/04/06/us/politics/neil-gorsuch-supreme-court-senate.html&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Overall, the filibuster went from being impossible, to being rarely used, to becoming an almost common part of Senate practice. I believe this change is due to the increasing lack of compromise in Congress. I’ve touched on this increasing divide in some of my older posts, and I think it’s important to recognize. Republicans and Democrats are, more and more often, simply refusing to cooperate with each other. The increasing use (and possible removal) of the filibuster is just another sign of that. As I’ve sad before as well, something needs to change.&lt;/p&gt;
+
+&lt;p&gt;https://www.nytimes.com/2017/04/05/us/politics/senator-jeff-merkley-protest-gorsuch-nomination.html
+http://www.npr.org/templates/story/story.php?storyId=4656990
+https://www.nytimes.com/2017/04/03/us/politics/filibuster-supreme-court-neil-gorsuch.html?_r=0
+http://www.politifact.com/truth-o-meter/article/2017/feb/03/6-questions-answered-about-nuclear-option-filibust/
+https://www.brookings.edu/testimonies/the-history-of-the-filibuster/&lt;/p&gt;
+</description>
+        <pubDate>Wed, 05 Apr 2017 00:00:00 -0400</pubDate>
+        <link>http://sosnader.tk/civic-issues/2017/04/05/filibusters.html</link>
+        <guid isPermaLink="true">http://sosnader.tk/civic-issues/2017/04/05/filibusters.html</guid>
+        
+        
+        <category>civic-issues</category>
+        
+      </item>
+    
+      <item>
+        <title>Issue Brief</title>
+        <description>&lt;p&gt;&lt;a href=&quot;https://docs.google.com/document/d/1yELJEE1DgdKyl_TuJUx7a5Sz9w-SlGGUssQaeCAI1Aw/edit?usp=sharing&quot;&gt;Link to issue brief&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Tue, 28 Mar 2017 00:00:00 -0400</pubDate>
+        <link>http://sosnader.tk/rcl/2017/03/28/issue-brief.html</link>
+        <guid isPermaLink="true">http://sosnader.tk/rcl/2017/03/28/issue-brief.html</guid>
+        
+        
+        <category>rcl</category>
+        
+      </item>
+    
+      <item>
+        <title>50 Shades of Grey</title>
+        <description>&lt;p&gt;DISCLAIMER: I have not actually read this book, however it was requested that I review a romance novel, so here it is.&lt;/p&gt;
+
+&lt;p&gt;I’m sure we all have heard of &lt;em&gt;50 Shades of Grey,&lt;/em&gt; by EL James. It’s basically a part of mainstream pop culture by now. It’s rocked the nation, sold over 125 million copies as of June 2015, and been translated into 52 languages. Two movies have been made out of it and its sequel, &lt;em&gt;50 Shades Darker&lt;/em&gt; (wow, what a creative name).&lt;/p&gt;
+
+&lt;p&gt;So what &lt;em&gt;is&lt;/em&gt; it about this book that makes it so popular? Could it have deep, compelling prose that pulls out the intricacies of love and romance, like the classic, &lt;em&gt;The Scarlet Letter?&lt;/em&gt; Could it be that it perhaps takes a daring approach at a difficult subject, and executes a careful yet masterful exploration of BDSM? Or, maybe it’s that the people have been longing for a well written book with a strong female lead, and &lt;em&gt;50 Shades&lt;/em&gt; perfectly picks up this mantle.&lt;/p&gt;
+
+&lt;p&gt;Spoiler: it’s none of these things. It’s garbage, an awfully written erotic novel based on a &lt;em&gt;Twilight&lt;/em&gt; fanfiction that has managed to capture so much attention due to it’s exploitation of one of humanity’s most basic urges – sex. The only reason this book has done so well is because it’s managed to put a mainstream face on an erotica novel. I’m not even sure how it happened, though, because the book is so poorly written. Not only that, it also portrays not a healthy, loving relationship, but one of abuse, exploitation, and cruelty. The relationship portrayed in the book is not one that any person should seek out, and by making it sound like a thrillfest, EL James is doing harm to our society’s perception of healthy sexual relationships.&lt;/p&gt;
+
+&lt;p&gt;Please, please, don’t read this book. And if you already have, I am so sorry. I’ll leave you with a quote from the book that makes me burst out in laughter every time I read it because of how awful it is:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;“I feel the colour in my cheeks rising again. I must be the colour of The Communist Manifesto.”&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/posts/comm.jpg&quot; alt=&quot;Communist Manifesto cover&quot; /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Wed, 22 Mar 2017 00:00:00 -0400</pubDate>
+        <link>http://sosnader.tk/passion/2017/03/22/50-shades-of-grey.html</link>
+        <guid isPermaLink="true">http://sosnader.tk/passion/2017/03/22/50-shades-of-grey.html</guid>
+        
+        
+        <category>passion</category>
+        
+      </item>
+    
+      <item>
+        <title>The Stormlight Archive</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/img/posts/archive.jpg&quot; alt=&quot;archive&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Today I’m gonna talk about one of my favorite fantasy series by one of my favorite authors: &lt;em&gt;The Stormlight Archive,&lt;/em&gt; by Brandon Sanderson. Brandon Sanderson has been around for a while, and he basically writes books like a tank. If you’re sick of George RR Martin’s incredibly slow writing pace, then you’ll be glad to hear that Sanderson is the exact opposite. He just churns out book after book, series after series, and it’s all quality.&lt;/p&gt;
+
+&lt;p&gt;I actually first read Sanderson books in gradeschool–he had this series for young adults about this evil cult of librarians. It was funny and well written. About a year ago, I read through a lot of his other works, and loved it all. He’s mainly a fantasy writer, and all of his fantasy series have really cool, unique systems of magic and little quirks. He’s really good at fleshing out cool, fantastical elements in his stories. Another cool thing is that many of his stories and series are actually connected under one big universe that he calls “The Cosmere.” You can find hints and refernces to other stories and events in just about all of his books.&lt;/p&gt;
+
+&lt;p&gt;Anyway, on to &lt;em&gt;The Stormlight Archive.&lt;/em&gt; He has another really great series, &lt;em&gt;Mistborn,&lt;/em&gt; which I also loved, but I’ll save that for another time. &lt;em&gt;The Stormlight Archive,&lt;/em&gt; is Sanderson’s first attempt at writing an epic fantasy series (like along the lines of &lt;em&gt;Game of Thrones&lt;/em&gt;, or &lt;em&gt;The Wheel of Time&lt;/em&gt;, which Sanderson actaully finished after the original author died). These books are really long. He plans on publishing ten books, and there’s two already out, with a third coming later this year. Unlike GRRM, I actually have faith that Sanderson will finish the series.&lt;/p&gt;
+
+&lt;p&gt;Okay, so I can’t really properly describe what the world in these books is actually &lt;em&gt;like,&lt;/em&gt; because it’s pretty complicated, but I’ll send you over to &lt;a href=&quot;https://en.wikipedia.org/wiki/The_Way_of_Kings#Setting&quot;&gt;Wikipedia’s&lt;/a&gt; description of the setting. There’s like magic gemstones and spirits and really cool glowing swords and stuff.&lt;/p&gt;
+
+&lt;p&gt;One possible downside of Sanderson that he tends to write very clean books. If you’re used to GRRM and lots of blood, sex, and cursing, you’ll be disappointed to not find any of that in Sanderson’s books. His characters don’t curse, instead opting to say things like “Storms!” where you’d expect someone to say “Fuck.” Romance is very PG and may remind you of middle school, rather than real life. But his books are always just really enjoyable to read. You get drawn in to the world, and the creative elements behind it. Sanderson is really good at worldbuilding and creating an intense and exciting story, even if his prose isn’t my personal favorite style.&lt;/p&gt;
+
+&lt;p&gt;Check him out!&lt;/p&gt;
+</description>
+        <pubDate>Thu, 16 Mar 2017 00:00:00 -0400</pubDate>
+        <link>http://sosnader.tk/passion/2017/03/16/the-stormlight-archive.html</link>
+        <guid isPermaLink="true">http://sosnader.tk/passion/2017/03/16/the-stormlight-archive.html</guid>
+        
+        
+        <category>passion</category>
+        
+      </item>
+    
+      <item>
+        <title>The Reversal of the Political Parties</title>
+        <description>&lt;p&gt;We all know the two main political parties of today. On the one side, there’s the Republicans: staunch conservatives who favor small government, state’s rights, and big business (yes, this is an oversimplification). On the other side, there’s the Democrats: liberals who focus more on big government programming and social progressiveness.&lt;/p&gt;
+
+&lt;p&gt;But it wasn’t always like this. Before we get into the history of the Democratic and Republican Parties specifically, let’s take a look at the history of political parties in the United States as a whole.&lt;/p&gt;
+
+&lt;h2 id=&quot;george-washington&quot;&gt;George Washington&lt;/h2&gt;
+
+&lt;p&gt;George Washington, our first president, wasn’t actually in any political party, technically. He actually did not like the idea of political parties, saying in his Farewell Address:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;“However [political parties] may now and then answer popular ends, they are likely in the course of time and things, to become potent engines, by which cunning, ambitious, and unprincipled men will be enabled to subvert the power of the people and to usurp for themselves the reins of government, destroying afterwards the very engines which have lifted them to unjust dominion.”&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;(Perhaps even more pertient in our present political climate).&lt;/p&gt;
+
+&lt;p&gt;So anyway, that didn’t last long.&lt;/p&gt;
+
+&lt;h2 id=&quot;federalist-party&quot;&gt;Federalist Party&lt;/h2&gt;
+
+&lt;p&gt;Technically, the Federalist Party could be considered the party of Washington. Its ideas were centered around the concept of federalism, i.e. a strong central government.&lt;/p&gt;
+
+&lt;h2 id=&quot;anti-federalist-party&quot;&gt;Anti-Federalist Party&lt;/h2&gt;
+
+&lt;p&gt;Self explanatory, basically. These guys sprung up right around 1800 and focused more on the common people and their right for representation. They were renamed the Republican Party, and then the Democratic-Republican Party. In the 1810s, the Federalist Party fell apart. The Democratic Republican Party split into different factions. Around the time of Andrew Jackson’s presidency, they were renamed simply the Democratic Party.&lt;/p&gt;
+
+&lt;h2 id=&quot;whig-party&quot;&gt;Whig Party&lt;/h2&gt;
+
+&lt;p&gt;A different faction of the Democratic Republican Party formed the Whig Party.  The Whig Party is important in the formation of the Republican Party because the Republican Party continued many of the ideas of the Whig Party, mainly, big government involvement.&lt;/p&gt;
+
+&lt;h2 id=&quot;democratic-and-republican-parties&quot;&gt;Democratic and Republican Parties&lt;/h2&gt;
+
+&lt;p&gt;So, the timeline where we can begin discussing these two parties and how they changed starts right around the Civil War. The Republican Party at the time, was the “party of Lincoln,” and as such, promoted forward-thinking ideas like freedom of slavery, voting rights for black men, and big government. The Democratic Party at the time was more traditional–it wasn’t new and fresh like the Republican Party, and it focused more on things like state’s rights.&lt;/p&gt;
+
+&lt;p&gt;After the Civil War, the Republican Party had multiple factions–some with more progressive economic ideas, and some with more conservative ideas. This will be important later.&lt;/p&gt;
+
+&lt;p&gt;Right before 1900, with William Jennings Bryan being the Democratic Party’s presidental candidate, the party shifted a bit more to the progressive side. WJB incorporated the Populist Party under the Democratic Party, which gave it a more economically left angle.&lt;/p&gt;
+
+&lt;p&gt;Now, remember how the Republican Party had those two factions? In 1912 Teddy Roosevelt runs under the Progressive Party, not the Republican Party, breaking away that progressive faction and leaving only the conservative behind. Franklin Roosevelt in the 1930s adopted Progressive Party platforms into the Democratic coalition.&lt;/p&gt;
+
+&lt;p&gt;A major shift comes in the 1960s with Lyndon B Johnson. Civil Rights become part of the Democratic Platform, and alienates many southern white voters. At this time, the Republican Party begins implementing the “Southern strategy,” where they appealed to southern, racist, white voters who were alienated by the Democratic Party.&lt;/p&gt;
+
+&lt;p&gt;So, at this point, we can generally see the political parties having the same alignments as they do today. The Democratic Party embraced many progressive ideals, both economic and social. The Republican Party ended up losing its progressive economic wing and, to get more votes, became more socially conservative. However, the parties were still not super polarized at this point. You could find conservative democrats and liberal republicans.&lt;/p&gt;
+
+&lt;p&gt;Contrast that with today’s political climate, and you see extreme polarization on both sides. There’s barely ever any compromise, and it’s frankly vicious to watch. The reasons for this, in my opinion, are largely due to the polarization that occurred during the Obama presidency. I touched on that in my previous post.&lt;/p&gt;
+
+&lt;p&gt;So that’s the general gist of it. I think we’re due for a reorganization of splitting of either or both of the two parties soon. The polarization is too extreme, and there’s infighting in the parties. We’ll see.&lt;/p&gt;
+
+&lt;p&gt;https://www.quora.com/Is-it-true-that-Democrats-used-to-be-the-conservative-party-and-Republicans-used-to-be-the-progressive-party
+https://tedtheeconomist.wordpress.com/2015/07/06/when-exactly-did-the-political-paradigm-shift-happen/comment-page-1/
+http://www.government-and-constitution.org/history-us-political-parties/timeline-us-political-parties.htm&lt;/p&gt;
+</description>
+        <pubDate>Wed, 15 Mar 2017 00:00:00 -0400</pubDate>
+        <link>http://sosnader.tk/civic-issues/2017/03/15/reversal-political-parties.html</link>
+        <guid isPermaLink="true">http://sosnader.tk/civic-issues/2017/03/15/reversal-political-parties.html</guid>
+        
+        
+        <category>civic-issues</category>
+        
+      </item>
+    
+      <item>
+        <title>Discworld</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/img/posts/disc.jpg&quot; alt=&quot;discworld&quot; /&gt;
+&lt;em&gt;Discworld&lt;/em&gt; is not one book, but a series of books by the English author Terry Pratchett. It’s one of my all time favorite series. Terry Pratchett is, unfortunately, deceased, but before he went, he wrote 40 of these books, so he did pretty well for himself.&lt;/p&gt;
+
+&lt;p&gt;The idea behind the Discworld universe is that, you guessed it, the world is a disc. The disc rests atop four elephants, which are standing on a giant turtle which floats through space. Yeah. Very realistic. It’s a fantasy world, with magic and all sorts of other crazy things. It’s kind of disengenuous to call Discworld a series, though. It’s more like a large collection of books all in the same universe, with different recurring people and areas and a (kind of loose) overall story.&lt;/p&gt;
+
+&lt;p&gt;There’s actually no need to read any of the stories in any particular order. I personally read them all in their published order, but that’s not necessary. There’s a few infographics online outlining good ways to start, and the different story arcs and plotlines. In general, there’s four main groups of people to look out for. There’s Rincewind, who’s a magician, the Witches, who are witches (duh), Death (I don’t have to explain), and The Watch. The Watch follows the lives of the city watchmen in Discworld’s twin cities, Ankh Morpork.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/posts/reading.jpg&quot; alt=&quot;reading order&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The reason I like these books so much is not just because they’re good fantasy books (and I really like fantasy), but because they’re actually incredibly funny. If you’ve ever read &lt;em&gt;The Hitchhiker’s Guide to the Galaxy,&lt;/em&gt; you’ll know exactly the type of humor I’m talking about. It’s that dry British wit that comes out in fantastic ways.&lt;/p&gt;
+
+&lt;p&gt;I’ll leave you with some of the &lt;a href=&quot;https://www.buzzfeed.com/donnad/discworld-quotes-about-life-the-universe-and-everything&quot;&gt;best quotes&lt;/a&gt; from the books.&lt;/p&gt;
+</description>
+        <pubDate>Thu, 02 Mar 2017 00:00:00 -0500</pubDate>
+        <link>http://sosnader.tk/passion/2017/03/02/discworld.html</link>
+        <guid isPermaLink="true">http://sosnader.tk/passion/2017/03/02/discworld.html</guid>
+        
+        
+        <category>passion</category>
+        
+      </item>
+    
+      <item>
+        <title>Naked Economics</title>
+        <description>&lt;p&gt;Today we’re gonna take a different track than the normal fiction books I’ve been writing about. Instead, I’m gonna talk about a book that I sincerely believe everyone should read for the purpose of their own education. It’s called &lt;em&gt;Naked Economics&lt;/em&gt;, by Charles Wheelan.&lt;/p&gt;
+
+&lt;p&gt;At first glance, you might be horrified at the prospect of reading a book about Econ. Economics gets a bad rap as a terrible subject, but it can actually be very interesting, if approached right. It’s also incredibly important (in my opinion) for everyone to have a basic grasp of economics, because, after all, money is what makes the world go round. We deal with and hear about economic issues every day of our live, yet many people just don’t understand what’s going on. And it’s not entirely their fault–it’s true that economics can be a dense and inaccessible topic.&lt;/p&gt;
+
+&lt;p&gt;However, this book is not that. It’s easy to read, enjoyable, and has great explanations on a variety of topics related to economics. It looks at all sorts of situations around the world and explains the economics behind them. My eyes were opened to a lot of new perspectives and things I hadn’t even thought about. While this won’t make you an expert, it will definitely help explain a bit of what goes on in the world around you, at least economically.&lt;/p&gt;
+
+&lt;p&gt;Like I said, I really do think everyone should read this book. In an ideal world, everyone would be able to take several in-depth economics classes to get a better, fuller understanding of the topic, but this book is a good start. Definitely think about checking it out if you’re in the mood for a nonfiction book and for some self edification. Also, if you really want, you can read his follow up book: &lt;em&gt;Naked Statistics.&lt;/em&gt;&lt;/p&gt;
+</description>
+        <pubDate>Thu, 23 Feb 2017 00:00:00 -0500</pubDate>
+        <link>http://sosnader.tk/passion/2017/02/23/naked-economics.html</link>
+        <guid isPermaLink="true">http://sosnader.tk/passion/2017/02/23/naked-economics.html</guid>
+        
+        
+        <category>passion</category>
+        
+      </item>
+    
+  </channel>
+</rss>
