@@ -4,7 +4,7 @@ category: passion
 title: "Slaughterhouse-Five"
 ---
 
-![slaughterhouse five]({{ site:baseurl }}/img/posts/house.jpg)
+![slaughterhouse five]({{ baseurl }}/img/posts/house.jpg)
 
 Slaughterhouse-Five, by Kurt Vonnegut, is a pretty cool book that I read last summer. I'm pretty sure it's known as one of those "classic" books that everyone should read. And I'm not gonna lie, it's a good book. It covers a fictional story about Billy Pilgrim, a chaplain's assistant in World War II. It's an anti war novel, so if you've read anything like *For Whom the Bell Tolls* or *Catch-22*, you know the type. It's partially based off of Vonnegut's own experiences during World War II. 
 

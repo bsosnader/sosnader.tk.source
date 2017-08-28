@@ -13,13 +13,13 @@ Yet, I had to give ChromeOS credit where credit was due. Because it's so lightwe
 
 That's where  [GalliumOS](https://galliumos.org/) comes in. I found GalliumOS after searching around a bit, and reading the description convinced me it was what I needed. It's super lightweight, and optimized almost as much as ChromeOS is, utilizing drivers and core files from the ChromeOS kernel itself to run near seamlessly on many popular Chromebooks.
 
-![GalliumOS Homepage]({{ site:baseurl }}/img/posts/gallium.png)
+![GalliumOS Homepage]({{ baseurl }}/img/posts/gallium.png)
 *the GalliumOS homepage*
 
 There's a few options when it comes to actually installing GalliumOS. The least invasive involves using a utility called [chrx](https://chrx.org/). There's a simple step-by-step process which involves enabling Developer Mode (more on that later), running a script to flash the firmware, and then running another script to install GalliumOS alongside ChromeOS.
 
 Like I said before however, I didn't want to see ChromeOS *at all.* Not to mention there's other problems with going the dual-boot route. You'll see a scary white screen warning you of the terrible damage you've done to your system (not really) and you'll always have to enter either `Ctrl+L` or `Ctrl+D` to enter GalliumOS or ChromeOS, repsectively. And there's a few minor graphical glitches while booting up. 
-![os verification example]({{ site:baseurl }}/img/posts/osv.png)
+![os verification example]({{ baseurl }}/img/posts/osv.png)
 *example of the scary white screen*
 
 

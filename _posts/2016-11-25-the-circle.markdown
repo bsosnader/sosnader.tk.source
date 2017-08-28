@@ -3,7 +3,7 @@ layout: post
 category: passion
 title: "The Circle"
 ---
-![circle cover]({{ site:baseurl }}/img/posts/circlecover.jpg)
+![circle cover]({{ baseurl }}/img/posts/circlecover.jpg)
 
 Now that we've all finished *The Circle*, it's time to offer my thoughts on it. I also kind of want to address the ending, which probably shocked most of us. 
 

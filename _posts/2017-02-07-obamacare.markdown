@@ -18,7 +18,7 @@ However, the negotiations were a sham. Mitch McConnell, leader of the Senate Rep
 
 The rest is history. Obamacare went to the Supreme Court, and was upheld. Due to the controversy, Republicans were able to make sweeping gains in the House in 2010, which, coupled with the census, lead to the redistricting and gerrymandering I talked about last article. Republicans would spend the next eight years blocking anything and everything that even had a faint whiff of Obama on it. 
 
-![affordable care act]({{ site:baseurl }}/img/posts/aca.png)
+![affordable care act]({{ baseurl }}/img/posts/aca.png)
 
 This is what partisanship does to America. An originally Republican plan gets decried by Republicans simply because Democrats were the ones pushing for it. Healthcare reform, something everyone needed at the time, was crippled by the partisanship of Congress. People hated Obamacare simply because of the name Obama. I remember watching a video clip of people being asked if they preferred the Affordable Care Act over Obamacare. Many said yes, having no idea they were the same thing. 
 

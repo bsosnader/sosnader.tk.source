@@ -3,7 +3,7 @@ layout: post
 category: passion
 title: "Maze Runner"
 ---
-![maze runner]({{ site:baseurl }}/img/posts/maze.png)
+![maze runner]({{ baseurl }}/img/posts/maze.png)
 
 *Maze Runner*, by James Dashner, is one of those ~classic~ young adult, dystopian science fiction novels that have been all the rage for the past decade. You may have heard about the movie that was made from it. The movie was trash. But the book wasn't bad. I really enjoyed it, and even reread it a few times. I think that even if a writer follows a stereotypical genre, or doesn't use much complexity in their writing, a book can still be just fun to read. This book was fun to read because of the concept behind it. 
 

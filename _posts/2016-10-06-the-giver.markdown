@@ -3,7 +3,7 @@ layout: post
 category: passion
 title: "The Giver"
 ---
-![the giver cover]({{ site:baseurl }}/img/posts/giver.jpg)
+![the giver cover]({{ baseurl }}/img/posts/giver.jpg)
 
 *The Giver*, by Lois Lowry is a book that many of us probably had to read for school at some point in our lives. I actually didn't, and only recently read it. It's more of a book for people a little bit younger than me, but I still found it enjoyable, and the ideas it explored made me think. We actually discussed it (well, the movie) in our AP Psychology class that year, and after I read The Circle, and especially after I responded to this week's prompt about *The Circle*, I thought of it.
 

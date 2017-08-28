@@ -3,7 +3,7 @@ layout: post
 category: passion
 title: "The Stranger"
 ---
-![the stranger cover]({{ site:baseurl }}/img/posts/stranger.jpg)
+![the stranger cover]({{ baseurl }}/img/posts/stranger.jpg)
 
 *The Stranger* is one of those classic novels, written in 1942 by Albert Camus. I read it senior year for English class. It's widely considered an existentialist novel, although apparently (a quick Wikipedia search tells me) Camus rejected that label (instead calling it absurdist). Regardless, it's really interesting, and shows what one can do with a novel beyond the typical storytelling.
 

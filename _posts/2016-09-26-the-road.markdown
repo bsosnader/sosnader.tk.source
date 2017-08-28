@@ -3,7 +3,7 @@ layout: post
 category: passion
 title: "The Road"
 ---
-![cover of The Road]({{ site:baseurl }}/img/posts/road.jpg)
+![cover of The Road]({{ baseurl }}/img/posts/road.jpg)
 
 *The Road*, by Cormac McCarthy, was another one of those English books that I was assigned senior year that I wasn't too sure that I'd like. It was the last book of the year, assigned after the AP test, and I was kind of thinking to myself, "do I *really* have to read this?" I had been looking forward to doing absolutely nothing in my classes after the AP tests. Athough my English teacher was one of my favorite teachers of all time, I really wasn't liking his insistence on having a discussion on a book that I didn't even know that I'd like during the last week of school. But I read it, because I actually like reading. It was more than worth it. 
 

@@ -3,7 +3,7 @@ layout: post
 category: passion
 title: "The Hitchhiker's Guide to the Galaxy"
 ---
-![don't panic]({{ site:baseurl }}/img/posts/dont-panic.jpg)
+![don't panic]({{ baseurl }}/img/posts/dont-panic.jpg)
 
 For the past few weeks, I've been doing books that I think speak to everyone--books that I think everyone would enjoy reading and that apply to all of our lives. And although I enjoy reading those sorts of books, I'd be lying if I said they're the majority of books I read. In reality, I mostly read fantasy and sci-fi. And although you may not enjoy these books as well, I feel like it'd be wrong if I didn't give them fair representation. So in the coming weeks I'll probably be doing more of those. 
 

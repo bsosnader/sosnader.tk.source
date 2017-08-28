@@ -3,7 +3,7 @@ layout: post
 category: passion
 title: "The Last Lecture"
 ---
-![The Last Lecture cover]({{ site:baseurl }}/img/posts/lecture.png)
+![The Last Lecture cover]({{ baseurl }}/img/posts/lecture.png)
 
 Another week has gone by, and it's time to review another one of my favorite books: *The Last Lecture*, by Randy Pausch. *The Last Lecture* is a book of lessons and stories written by Dr. Pausch, a professor of computer science at Carnegie Mellon Universrity, after he was diagnosed with terminal pancreatic cancer. It originally started out as a lecture, titled "Really Achieving Your Childhood Dreams." There had been a movement going around in academia where top professors would deliver a "last lecture," i.e. what they would say if it was their last chance to impart some message to the world. In Pausch's case, it really was one of his final chances, as he was not expected to live longer than a year. 
 

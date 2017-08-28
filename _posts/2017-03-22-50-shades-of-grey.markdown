@@ -16,4 +16,4 @@ Please, please, don't read this book. And if you already have, I am so sorry. I'
 
 >"I feel the colour in my cheeks rising again. I must be the colour of The Communist Manifesto."
 
-![Communist Manifesto cover]({{ site:baseurl }}/img/posts/comm.jpg)
+![Communist Manifesto cover]({{ baseurl }}/img/posts/comm.jpg)

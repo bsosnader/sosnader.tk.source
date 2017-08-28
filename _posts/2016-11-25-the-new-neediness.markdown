@@ -4,7 +4,7 @@ category: circle
 title: "The New Neediness"
 ---
 
-![love me gif]({{ site:baseurl }}/img/posts/loveme.gif)
+![love me gif]({{ baseurl }}/img/posts/loveme.gif)
 
 One aspect of the *The Circle* that I think Dave Eggers utilized really well to critique modern society was his depiction of the "neediness" that people seem to have developed, the desire for attention that overwhelms Mae at points, and disgusts Mercer. It's the relentless begging for likes, shares, pings, and responses that seems ridiculous, but has solid basis in reality. We see it many times throughout the book. Mae is pestered by people when she becomes famous to respond to all of their notes, to look at their websites, to help their children with this or that by giving them attention. Francis's strange desires, like asking Mae to rate his "performance" also reflect this neediness. It's mostly seen through the social and online aspect of the book. As Mercer says:
 

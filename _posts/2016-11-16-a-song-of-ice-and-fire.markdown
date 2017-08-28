@@ -3,7 +3,7 @@ layout: post
 category: passion
 title: "A Song of Ice and Fire"
 ---
-![map of westeros]({{ site:baseurl }}/img/posts/ice.jpg)
+![map of westeros]({{ baseurl }}/img/posts/ice.jpg)
 
 Although George R.R. Martin's *A Song of Ice and Fire* is technically a series, not a single book, I can't talk about one book without talking about them all. And believe me, every single one of these books is incredible.
 

@@ -4,7 +4,7 @@ category: passion
 title: "The Stormlight Archive"
 ---
 
-![archive]({{ site:baseurl }}/img/posts/archive.jpg)
+![archive]({{ baseurl }}/img/posts/archive.jpg)
 
 Today I'm gonna talk about one of my favorite fantasy series by one of my favorite authors: *The Stormlight Archive,* by Brandon Sanderson. Brandon Sanderson has been around for a while, and he basically writes books like a tank. If you're sick of George RR Martin's incredibly slow writing pace, then you'll be glad to hear that Sanderson is the exact opposite. He just churns out book after book, series after series, and it's all quality.
 

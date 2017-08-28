@@ -3,7 +3,7 @@ layout: post
 category: passion
 title: "You Shall Know Our Velocity!"
 ---
-![velocity cover]({{ site:baseurl }}/img/posts/velocity.jpg)
+![velocity cover]({{ baseurl }}/img/posts/velocity.jpg)
 Before we continue, I need to warn you--this is a Dave Eggers book. If you're not a fan of Dave Eggers, don't even bother considering reading this book. You probably won't like it.
 
 I don't really know what it is that I like so much about Eggers' writing (other than *The Circle*, which I *didn't* like), but, much like *A Heartbreaking Work of Staggering Genius,*  this book also taps into something deeply emotional inside me. 

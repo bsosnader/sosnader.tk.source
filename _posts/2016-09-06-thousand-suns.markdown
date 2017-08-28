@@ -3,7 +3,7 @@ layout: post
 title: A Thousand Splendid Suns
 category: passion
 ---
-![A Thousand Splendid Suns Cover]({{ site:baseurl }}/img/posts/atss.gif)
+![A Thousand Splendid Suns Cover]({{ baseurl }}/img/posts/atss.gif)
 
 To kick off my first "real" passion post, I've decided I'll start with discussing one of my favorite books, *A Thousand Splendid Suns*, by Khaled Hosseini. I'm not going to reveal any spoilers about any of the books I write about just in case anyone decides they want to read one of them, but I will talk about what the books are about and my reactions to them, among other things. 
 
