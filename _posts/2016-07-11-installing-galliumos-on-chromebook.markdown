@@ -65,7 +65,7 @@ After installing Chrome, I made shortcuts to my Chrome Apps and added them to Pl
 
 I've been a member of [Desktoppr.co](http://desktoppr.co) for a while now, and I've amassed a pretty large selection of beautiful wallpapers. It's really simple to get a slideshow of wallpapers in the XFCE environemnt. I just right clicked (clicked the touchpad with two fingers) on the desktop, selected to customize it, chose the folder where I downloaded my wallpapers, and checked the box to shuffle wallpapers with a timer. The end result of all this is pretty great.
 
-![Desktop screenshot]({{ site:baseurl}}/img/posts/desktop.png)
+![Desktop screenshot]({{ baseurl }}/img/posts/desktop.png)
 *my customized linux setup*
 
 And that's it! I'm completely happy with my laptop, and I'm even second-guessing whether or not I'll really need the new Macbook Pro when it comes out. This little thing looks beautiful and I haven't run into any hiccups or slowdowns yet. Certainly a great deal for only $280.

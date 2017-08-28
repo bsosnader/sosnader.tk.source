@@ -14,4 +14,4 @@ I faced a few challenges in getting this project up and running, but all in all 
 
 The Angular team makes it really easy to get a project up and running with the [angular-cli](https://cli.angular.io/) tool. After running their setup, all I had to do was configure a few components, set up my form and calculations, and apply some styles. It's pretty barebones, but it got me to learn the basics of what AngularJS is all about, and I'm excited to be be able to use its tools in future projects.
 
-[![grade app screenshot]({{ site:baseurl}}/img/posts/grade.png)](http://sosnader.tk/grade-calc)
+[![grade app screenshot]({{ baseurl }}/img/posts/grade.png)](http://sosnader.tk/grade-calc)

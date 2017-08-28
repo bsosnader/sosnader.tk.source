@@ -3,7 +3,7 @@ layout: post
 title: The Newbies
 category: circle
 ---
-![The Circle and Penn State Seal]({{ site:baseurl}}/img/posts/seals.png)
+![The Circle and Penn State Seal]({{ baseurl }}/img/posts/seals.png)
 
 What do Penn State and The Circle community have in common? Two words—their size. One of the many things Mae is awed by as she enters the Circle campus is the vastness of it all, with rolling fields, courts, buildings, art, and so much more. Like many other new Penn Staters, one of the most striking things about Penn State is the sheer size of the campus. One can explore for an entire day and still not have visited every building or hotspot on campus. There's always something to discover. Mae is dazzled by the interworkings of The Circle and the countless different areas and rooms she is whisked around to. 
 

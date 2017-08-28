@@ -8,7 +8,7 @@ Gerrymandering. It's a political term heard in the media often, flung at both De
 
  The definition of gerrymandering is "to manipulate the boundaries of (an electoral constituency) so as to favor one party or class." Voting districts for state or federal congressional districts can be shaped in ways to include or exclude certain areas of the population. For instance, if a politician knows that one area of town supports him, but another does not, he would prefer it if his district only included the people who do support him, to better his chances of winning. This type of shaping can silence the voices of people who would vote against the party in charge of the districting by splitting them up and diluting their voting power. 
 
-![gerrymandering]({{ site:baseurl}}/img/posts/gerrymander.png)
+![gerrymandering]({{ baseurl }}/img/posts/gerrymander.png)
 
  The origin of the funny little word itself is a portmanteau of "salamander" and "Gerry." The Gerry comes from the last name of a certain Elbridge Gerry, who, in 1812, did just what the definition says--reshaped his district to favor his party. The shape was said to look somewhat like a salamander, and the name stuck. 
 
@@ -30,7 +30,7 @@ The current, one-sided use of gerrymandering by the Republican party is indicati
 
 Are there solutions? Once again, yes, but it will take a long time before we see change. Gerrymandering is used by both parties go keep their power, and those who got elected due to gerrymandering are hardly going to turn around and destroy the very thing that gave them their power. But what can be done? Some states use nonpartisan committees to draw boundaries instead of the politicans, but even these committees can be infiltrated with partisanship. There are also computer algorithms which can draw perfectly "fair" districts, which seem quite promising, when looking at the results.
 
-![gerrymandering 3]({{ site:baseurl}}/img/posts/gerry3.jpg)
+![gerrymandering 3]({{ baseurl }}/img/posts/gerry3.jpg)
 
 The results are quite different than the original, snaking, convoluted districts. Problem solved, right? Not exactly. These kinds of districts forego some of the positive possibilities of gerrymandering--allowing minorities to get representation where they otherwise would not. It's likely that the best solution will involve a combination of computer algorithms and committees. For now, we'll just have to deal with this being considered "fair representation:"
 
