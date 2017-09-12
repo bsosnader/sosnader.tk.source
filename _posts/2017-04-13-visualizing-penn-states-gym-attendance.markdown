@@ -6,7 +6,7 @@ title: "Visualizing Penn State's Daily Gym Attendance"
 
 ![white building ]({{ baseurl }}/img/posts/gym.jpg)
 
-If you're a Penn State student who likes to exercise, you know that the three on-campus gyms can get *really* crowded. It sometimes seems like you have to get there immediately at opening time if you want to get a peaceful, uninterrupted workout in. It's to be expected--although three gyms is a lot, 46,000 students is even more. The University recognizes that this can be a problem, and takes a count of students entering and exiting each gym, uploading it to a [really neat webapp](https://studentaffairs.psu.edu/CurrentFitnessAttendance/) where you can see how crowded each gym is. But that doesn't really help you plan--you can only see what's happening in the moment. Sure, eventually if you check it enough you get used to knowing when the crowds come and go, but it'd be a lot more useful (and interesting) to see attendance charted over time. So when my friend Ally suggested the idea to me, I decided to do just that. 
+If you're a Penn State student who likes to exercise, you know that the three on-campus gyms can get *really* crowded. It sometimes seems like you have to get there immediately at opening time if you want to get a peaceful, uninterrupted workout in. It's to be expected--although three gyms is a lot, 46,000 students is even more. The University recognizes that this can be a problem, and takes a count of students entering and exiting each gym, uploading it to a [really neat webapp](https://studentaffairs.psu.edu/CurrentFitnessAttendance/) where you can see how crowded each gym is. But that doesn't really help you plan--you can only see what's happening in the moment. Sure, eventually if you check it enough you get used to knowing when the crowds come and go, but it'd be a lot more useful (and interesting) to see attendance charted over time. So I decided to do just that.
 <!--more-->
 
 # Breaking it down
@@ -79,49 +79,47 @@ if __name__ == '__main__':
     main(host=args.host, port=args.port)
 ```
 
-I got all of that working on my laptop, and now had a python script I could run to consistently add data to the database. The next step was getting data in regular intervals. I needed to set up a server. 
+I got all of that working on my laptop, and now had a python script I could run to consistently add data to the database. The next step was getting data in regular intervals. I needed to set up a server.
 
 # The Server
 
 As a cheap college student, I never want to spend money if I don't absolutely have to. For instance, this website is hosted by [github pages](https://pages.github.com/) entirely for free, as is my [Grade Calculator](http://sosnader.tk/grade-calc/) project. But, github pages is just a simple static host for frontend content. I needed a real machine to run my database on.
 
-Before making the jump to buying a VPS though, I first pulled out my dusty old Raspberry Pi Model A. After a *lot* of tweaking and fiddling, I got the database set up on a headless installation of raspbian. There's not too much to talk about here. After installing InfluxDB, Python 3, and all their respective dependencies, I added a simple cron job add data every ten minutes. 
+Before making the jump to buying a VPS though, I first pulled out my dusty old Raspberry Pi Model A. After a *lot* of tweaking and fiddling, I got the database set up on a headless installation of raspbian. There's not too much to talk about here. After installing InfluxDB, Python 3, and all their respective dependencies, I added a simple cron job add data every ten minutes.
 
 ```bash
 */10 * * * * bash -l -c '/home/brenden/psu-fitness/database.py' >> /home/brenden/logs/cron.log 2>&1
 ```
 
-Once I verified that my setup was working correctly, I grabbed a server from [Vultr](https://www.vultr.com/) and replicated my setup. Originally, I planned on only hosting the database in the VPS, and putting the front end on github pages. However, I figured since I already had the server I might as well use it as the web server as well. I've never configured my own web server from scratch before anyway, so I viewed it as a new challenge. 
+Once I verified that my setup was working correctly, I grabbed a server from [Vultr](https://www.vultr.com/) and replicated my setup. Originally, I planned on only hosting the database in the VPS, and putting the front end on github pages. However, I figured since I already had the server I might as well use it as the web server as well. I've never configured my own web server from scratch before anyway, so I viewed it as a new challenge.
 
 Configuration was actually super easy. I installed nginx and set up a configuration file. The config file had two key parts. The first part told the server where to look to find the html files to serve to port 80. THe second part told the server where to look if someone queried the database, which, for InfluxDB, takes the form of:
 
 ```
 http://servername:8086/query?your-query-here
 ```
-I didn't want to have that silly 8086 there so I set up a reverse proxy to point any requests to 
+I didn't want to have that silly 8086 there so I set up a reverse proxy to point any requests to
 
 ```
 http://servername/query
 ```
 
-to port 8086 and to the database. InfluxDB has some basic authentication built in, and I'm not too worried about anyone hacking into my database. They wouldn't find anything anyway, and I took enough basic steps I feel to stop any bot or casual hacker from doing something they shouldn't. 
+to port 8086 and to the database. InfluxDB has some basic authentication built in, and I'm not too worried about anyone hacking into my database. They wouldn't find anything anyway, and I took enough basic steps I feel to stop any bot or casual hacker from doing something they shouldn't.
 
-Speaking of security, I also decided to add SSL support to the site. I was expecting this to be a huge hassle, but luckily [Let's Encrypt](https://letsencrypt.org) offers a super painless way to set up SSL support on a web server. I just had to change my nginx configuration file a little bit and run the tool that Let's Encrypt supplies and I was good to go. 
+Speaking of security, I also decided to add SSL support to the site. I was expecting this to be a huge hassle, but luckily [Let's Encrypt](https://letsencrypt.org) offers a super painless way to set up SSL support on a web server. I just had to change my nginx configuration file a little bit and run the tool that Let's Encrypt supplies and I was good to go.
 
 # The Front End
 
-The final part of this challenge was the front end. I wanted to go barebones this time--I didn't think I needed any sort of Angular framework or the like. I just wanted a simple page to display the graph and some info and nothing else. [ChartJS](http://chartjs.org) is a great, simple JavaScript charting library that I was easily able to adapt to my purposes. After whipping a few styles together along with the [Skeleton CSS Framework](http://getskeleton.com) (a new favorite of mine), the site was finally ready to deploy! You can view it at [https://fitnessdb.tk](https://fitnessdb.tk). 
+The final part of this challenge was the front end. I wanted to go barebones this time--I didn't think I needed any sort of Angular framework or the like. I just wanted a simple page to display the graph and some info and nothing else. [ChartJS](http://chartjs.org) is a great, simple JavaScript charting library that I was easily able to adapt to my purposes. After whipping a few styles together along with the [Skeleton CSS Framework](http://getskeleton.com) (a new favorite of mine), the site was finally ready to deploy! You can view it at [https://fitnessdb.tk](https://fitnessdb.tk).
 
 # What I Learned
 
-This project took a few weeks of my time, but the efforts were more than worth it. Not only did I create something that's sorta cool, I also learned a ton about a bunch of different technologies in the process. I got a *lot* more comfortable with databases than I have been in the past. I really had never used or configured a database up until this point, and this project was a great way to learn in a hands on approach. 
+This project took a few weeks of my time, but the efforts were more than worth it. Not only did I create something that's sorta cool, I also learned a ton about a bunch of different technologies in the process. I got a *lot* more comfortable with databases than I have been in the past. I really had never used or configured a database up until this point, and this project was a great way to learn in a hands on approach.
 
-I also got better with using external Python and JavaScript libraries. Documentation can often be sparse and unreadable, and I definitely learned how to adapt and twist things to do what I wanted them to do. 
+I also got better with using external Python and JavaScript libraries. Documentation can often be sparse and unreadable, and I definitely learned how to adapt and twist things to do what I wanted them to do.
 
-Funnily enough, I think what I learned the *most* about through this project was the linux shell. I had to use it extensively to configure the servers, run commands, and test things. I got far more comfortable with it than I had been before, and I think those skills will really help my productivity in the future. 
+Funnily enough, I think what I learned the *most* about through this project was the linux shell. I had to use it extensively to configure the servers, run commands, and test things. I got far more comfortable with it than I had been before, and I think those skills will really help my productivity in the future.
 
-Anyway, that's all! I'm pretty sure no one will ever read this other than me, so that's kind of sad. But hey, it's good to write out my steps and process to help me remember how I did it and to document it for the future. 
+Anyway, that's all! I'm pretty sure no one will ever read this other than me, so that's kind of sad. But hey, it's good to write out my steps and process to help me remember how I did it and to document it for the future.
 
 Until next time!
-
- 
