@@ -1,6 +1,0 @@
----
-layout: post
-category: civic-issues
-title: "Test Post"
----
-Testing, testing...
