@@ -6,6 +6,8 @@ title: "Visualizing Penn State's Daily Gym Attendance"
 
 ![white building ]({{ baseurl }}/img/posts/gym.jpg)
 
+#### Notice: As of Summer 2018, Penn State has taken down the website I used to scrape data from, so the site doesn't work anymore. :(
+
 If you're a Penn State student who likes to exercise, you know that the three on-campus gyms can get *really* crowded. It sometimes seems like you have to get there immediately at opening time if you want to get a peaceful, uninterrupted workout in. It's to be expected--although three gyms is a lot, 46,000 students is even more. The University recognizes that this can be a problem, and takes a count of students entering and exiting each gym, uploading it to a [really neat webapp](https://studentaffairs.psu.edu/CurrentFitnessAttendance/) where you can see how crowded each gym is. But that doesn't really help you plan--you can only see what's happening in the moment. Sure, eventually if you check it enough you get used to knowing when the crowds come and go, but it'd be a lot more useful (and interesting) to see attendance charted over time. So I decided to do just that.
 <!--more-->
 
