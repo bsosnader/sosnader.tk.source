@@ -6,7 +6,9 @@ title: "Visualizing Penn State's Daily Gym Attendance"
 
 ![white building ]({{ baseurl }}/img/posts/gym.jpg)
 
-#### Notice: As of Summer 2018, Penn State has taken down the website I used to scrape data from, so the site doesn't work anymore. :(
+#### Notice: As of Summer 2018, Penn State has taken down the website I used to scrape data from, so the graph doesn't work anymore. :( Also, turns out I don't have any full-size screenshots saved anymore, so enjoy this blurry thumbnail of the final product
+
+![fitness thumbnail]({{ baseurl }}/img/posts/fitness.png)
 
 If you're a Penn State student who likes to exercise, you know that the three on-campus gyms can get *really* crowded. It sometimes seems like you have to get there immediately at opening time if you want to get a peaceful, uninterrupted workout in. It's to be expected--although three gyms is a lot, 46,000 students is even more. The University recognizes that this can be a problem, and takes a count of students entering and exiting each gym, uploading it to a [really neat webapp](https://studentaffairs.psu.edu/CurrentFitnessAttendance/) where you can see how crowded each gym is. But that doesn't really help you plan--you can only see what's happening in the moment. Sure, eventually if you check it enough you get used to knowing when the crowds come and go, but it'd be a lot more useful (and interesting) to see attendance charted over time. So I decided to do just that.
 <!--more-->
@@ -121,7 +123,5 @@ This project took a few weeks of my time, but the efforts were more than worth i
 I also got better with using external Python and JavaScript libraries. Documentation can often be sparse and unreadable, and I definitely learned how to adapt and twist things to do what I wanted them to do.
 
 Funnily enough, I think what I learned the *most* about through this project was the linux shell. I had to use it extensively to configure the servers, run commands, and test things. I got far more comfortable with it than I had been before, and I think those skills will really help my productivity in the future.
-
-Anyway, that's all! I'm pretty sure no one will ever read this other than me, so that's kind of sad. But hey, it's good to write out my steps and process to help me remember how I did it and to document it for the future.
 
 Until next time!
