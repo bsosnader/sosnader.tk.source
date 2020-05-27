@@ -9,9 +9,9 @@
 title: Brenden Sosnader
 email: brendensosnader@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-  Hi, I'm Brenden Sosnader. I'm a student studying computer science and statistics at the Schreyer Honors College at Penn State.
+  Hi, I'm Brenden Sosnader. I'm a recent Penn State graduate with degrees in Computer Science and Statistics. I will begin working for Microsoft in Redmond, WA as a software engineer in July. 
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://sosnader.tk" # the base hostname & protocol for your site
+url: "http://sosnader.com" # the base hostname & protocol for your site
 twitter_username: bsosnader
 github_username:  bsosnader
 

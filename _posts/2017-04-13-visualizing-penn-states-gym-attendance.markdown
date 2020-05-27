@@ -87,7 +87,7 @@ I got all of that working on my laptop, and now had a python script I could run 
 
 # The Server
 
-As a cheap college student, I never want to spend money if I don't absolutely have to. For instance, this website is hosted by [github pages](https://pages.github.com/) entirely for free, as is my [Grade Calculator](http://sosnader.tk/grade-calc/) project. But, github pages is just a simple static host for frontend content. I needed a real machine to run my database on.
+As a cheap college student, I never want to spend money if I don't absolutely have to. For instance, this website is hosted by [github pages](https://pages.github.com/) entirely for free, as is my [Grade Calculator](http://sosnader.com/grade-calc/) project. But, github pages is just a simple static host for frontend content. I needed a real machine to run my database on.
 
 Before making the jump to buying a VPS though, I first pulled out my dusty old Raspberry Pi Model A. After a *lot* of tweaking and fiddling, I got the database set up on a headless installation of raspbian. There's not too much to talk about here. After installing InfluxDB, Python 3, and all their respective dependencies, I added a simple cron job add data every ten minutes.
 
